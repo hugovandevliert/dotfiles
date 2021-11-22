@@ -34,9 +34,7 @@ fi
 
 # Custom git commands
 alias gs="git status"
-alias gdc="git diff --cached"
 alias gbd="git branch -D"
-alias glog="git log --oneline --decorate --graph --all"
 
 # Github GPG
 export GPG_TTY=$(tty)

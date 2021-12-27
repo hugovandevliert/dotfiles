@@ -29,7 +29,7 @@ git config --global commit.gpgsign true
 git config --global gpg.program gpg
 
 echo "Configuring vim..."
-cp -r .vim ~/.vim
+cp -R .vim/ ~/.vim
 vim +PlugInstall +qa!
 
-echo "Installation complete!"
+echo "Installation complete! You might want to reboot"

@@ -66,7 +66,7 @@ set laststatus=2
 
 " Enhanced command line completion
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=longest:full,full
 
 " Allow the usage of multiple buffers
 set hidden
@@ -119,12 +119,12 @@ set directory=$HOME/.vim/swap//
 " Assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
 
+" Make Y behave like C and D
+nnoremap Y y$
+
 " Allow for some common typo's
 command! W :w
 command! Q :q
-
-" Disable vim recording
-map q <Nop>
 
 " set <space> as the leader for mappings
 let mapleader=' '
@@ -164,12 +164,18 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 " ALE settings
 let g:ale_set_highlights = 0
 let g:ale_linters = {
-  \  'ruby': ['rubocop'],
-  \  'typescript': ['eslint'],
-  \  'javascript': ['eslint'],
-  \}
+\  'ruby': ['rubocop'],
+\  'typescript': ['eslint'],
+\  'javascript': ['eslint'],
+\}
 let g:ale_fix_on_save = 1
-let g:ale_fixers = { '*': ['trim_whitespace'] }
+let g:ale_fixers = {
+\  '*': ['trim_whitespace'],
+\  'typescript': ['eslint'],
+\  'typescriptreact': ['eslint'],
+\  'javascript': ['eslint'],
+\  'javascriptreact': ['eslint'],
+\}
 
 " SuperTab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"

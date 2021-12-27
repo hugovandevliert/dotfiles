@@ -1,15 +1,16 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/core'
+tap 'homebrew/services'
 
-brew "fzf"
-brew "git"
-brew "gnupg"
-brew "htop"
-brew "pinentry-mac"
-brew "ripgrep"
-brew "vim"
+brew 'fzf'
+brew 'git'
+brew 'gnupg'
+brew 'htop'
+brew 'pinentry-mac'
+brew 'ripgrep'
+brew 'vim'
 
+cask 'iterm2'
 cask 'firefox'
 cask 'google-chrome'

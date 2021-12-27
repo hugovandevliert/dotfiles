@@ -7,6 +7,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle
 brew cleanup
 
+echo "Installing ohmyzsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Configuring macOS settings..."
 sh .macos
 

@@ -164,6 +164,9 @@ nnoremap <leader>- :Expl<CR>
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
 xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
+" Toggle line indentations
+nnoremap <leader>tl :IndentLinesToggle<CR>
+
 " ALE settings
 let g:ale_set_highlights = 0
 let g:ale_linters = {
@@ -189,8 +192,11 @@ let g:airline_extensions = []
 let g:airline_section_b = ''
 let g:airline_section_y = ''
 let g:airline_section_z = "line %l/%L - %p%%"
-let g:airline_detect_spell=0
-let g:airline_detect_spelllang=0
+let g:airline_detect_spell = 0
+let g:airline_detect_spelllang = 0
+
+" IndentLine settings
+let g:indentLine_enabled = 0
 
 call plug#begin()
 
@@ -207,6 +213,7 @@ Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 

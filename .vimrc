@@ -126,12 +126,15 @@ nnoremap Y y$
 command! W :w
 command! Q :q
 
+" Disable Ex mode
+nnoremap Q <nop>
+
 " set <space> as the leader for mappings
 let mapleader=' '
 nnoremap <space> <nop>
 
-" Map <C-L> to also turn off search highlighting until the next search
-nnoremap <C-L> :nohl<CR><C-L>
+" Turn off search highlighting until the next search
+nnoremap <leader>l :nohlsearch<CR>
 
 " Mappings for fzf file jumping
 nnoremap <leader>jf :GFiles --cached --others --exclude-standard<CR>

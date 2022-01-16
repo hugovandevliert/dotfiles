@@ -78,7 +78,7 @@ set ignorecase smartcase
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting)
+" Highlight searches
 set hlsearch
 
 " Highlight search results during typing
@@ -147,18 +147,16 @@ nnoremap <Leader>jad :Rg <CR>
 " Exclude filenames from Rg searches
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
-" Mappings and settings for signify
+" Mappings for Signify
 nnoremap <leader>gd :SignifyDiff<CR>
 nnoremap <leader>gp :SignifyHunkDiff<CR>
 nnoremap <leader>gu :SignifyHunkUndo<CR>
-let g:signify_sign_change = '~'
-let g:signify_sign_show_count = 0
 
 " Copy relative path of current buffer
 nnoremap <leader>cf :let @*=expand('%')<CR>
 
 " Open the current directory
-nnoremap <leader>- :Expl<CR>
+nnoremap <leader>- :NERDTreeFind<CR>
 
 " Paste without adding to the register in visual mode
 xnoremap <expr> p 'pgv"'.v:register.'y`>'
@@ -166,6 +164,20 @@ xnoremap <expr> P 'Pgv"'.v:register.'y`>'
 
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
+
+" Start NERDTree when Vim is started without file arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | q | endif
+
+" NERDTree settings
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeWinSize = 36
+
+" Signify settings
+let g:signify_sign_change = '~'
+let g:signify_sign_show_count = 0
 
 " ALE settings
 let g:ale_set_highlights = 0
@@ -204,6 +216,8 @@ let g:closetag_filenames = "*.html,*.jsx,*.tsx,*.html.erb,*.xml"
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'
+Plug 'preservim/nerdtree'
+Plug 'philrunninger/nerdtree-visual-selection'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -216,7 +230,7 @@ Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'Yggdroot/indentLine'
+Plug 'yggdroot/indentline'
 Plug 'alvan/vim-closetag'
 
 call plug#end()

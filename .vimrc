@@ -137,12 +137,12 @@ nnoremap <space> <nop>
 nnoremap <leader>l :nohlsearch<CR>
 
 " Mappings for fzf file jumping
-nnoremap <leader>jf :GFiles --cached --others --exclude-standard<CR>
-nnoremap <leader>jaf :Files<CR>
+nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
+nnoremap <silent> <leader>jaf :Files<CR>
 
 " Mappings for Rg
-nnoremap <Leader>jd :Rg <C-R><C-W><CR>
-nnoremap <Leader>jad :Rg <CR>
+nnoremap <silent> <Leader>jd :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>jad :Rg <CR>
 
 " Exclude filenames from Rg searches
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
@@ -156,11 +156,11 @@ nnoremap <leader>gu :SignifyHunkUndo<CR>
 nnoremap <leader>cf :let @*=expand('%')<CR>
 
 " Open the current directory
-nnoremap <leader>- :NERDTreeFind<CR>
+nnoremap <silent> <leader>- :NERDTreeFind<CR>
 
 " Paste without adding to the register in visual mode
-xnoremap <expr> p 'pgv"'.v:register.'y`>'
-xnoremap <expr> P 'Pgv"'.v:register.'y`>'
+xnoremap <expr>p 'pgv"'.v:register.'y`>'
+xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>

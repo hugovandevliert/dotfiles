@@ -167,7 +167,7 @@ nnoremap <leader>tl :IndentLinesToggle<CR>
 
 " Start NERDTree when Vim is started without file arguments
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | q | endif
+autocmd VimEnter * if exists(':NERDTree') && argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | q | endif
 
 " NERDTree settings
 let g:NERDTreeQuitOnOpen = 1

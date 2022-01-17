@@ -155,9 +155,6 @@ nnoremap <leader>gu :SignifyHunkUndo<CR>
 " Copy relative path of current buffer
 nnoremap <leader>cf :let @*=expand('%')<CR>
 
-" Open the current directory
-nnoremap <silent> <leader>- :NERDTreeFind<CR>
-
 " Paste without adding to the register in visual mode
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
 xnoremap <expr>P 'Pgv"'.v:register.'y`>'
@@ -165,15 +162,8 @@ xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
 
-" Start NERDTree when Vim is started without file arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if exists(':NERDTree') && argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | q | endif
-
-" NERDTree settings
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize = 36
+" Browse the current directory when Vim is started without file arguments
+autocmd VimEnter * if argc() == 0 | e . | endif
 
 " Signify settings
 let g:signify_sign_change = '~'
@@ -203,7 +193,7 @@ let g:SuperTabCrMapping = 1
 let g:airline_extensions = []
 let g:airline_section_b = ''
 let g:airline_section_y = ''
-let g:airline_section_z = "line %l/%L - %p%%"
+let g:airline_section_z = 'line %l/%L - %p%%'
 let g:airline_detect_spell = 0
 let g:airline_detect_spelllang = 0
 
@@ -211,19 +201,18 @@ let g:airline_detect_spelllang = 0
 let g:indentLine_enabled = 0
 
 " CloseTag settings
-let g:closetag_filenames = "*.html,*.jsx,*.tsx,*.html.erb,*.xml"
+let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.html.erb,*.xml'
 
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'
-Plug 'preservim/nerdtree'
-Plug 'philrunninger/nerdtree-visual-selection'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'

@@ -119,6 +119,12 @@ set directory=$HOME/.vim/swap//
 " Assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
 
+" Browse the current directory when Vim is started without file arguments
+autocmd VimEnter * if argc() == 0 | e . | endif
+
+" Automatically equalise splits when Vim is resized
+autocmd VimResized * wincmd =
+
 " Make Y behave like C and D
 nnoremap Y y$
 
@@ -161,9 +167,6 @@ xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
-
-" Browse the current directory when Vim is started without file arguments
-autocmd VimEnter * if argc() == 0 | e . | endif
 
 " Signify settings
 let g:signify_sign_change = '~'

@@ -142,6 +142,10 @@ nnoremap <space> <nop>
 " Turn off search highlighting until the next search
 nnoremap <leader>l :nohlsearch<CR>
 
+" Mappings for yankstack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
 " Mappings for fzf file jumping
 nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
 nnoremap <silent> <leader>jaf :Files<CR>
@@ -210,6 +214,7 @@ call plug#begin()
 
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'

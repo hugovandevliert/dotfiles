@@ -168,6 +168,16 @@ xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
 
+" Toggle colorcolumn on and off
+function! ToggleColorColumn()
+  if !&colorcolumn
+    set colorcolumn=80
+  else
+    set colorcolumn&
+  endif
+endfunction
+nnoremap <leader>tc :call ToggleColorColumn()<CR>
+
 " Signify settings
 let g:signify_sign_change = '~'
 let g:signify_sign_show_count = 0

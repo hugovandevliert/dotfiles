@@ -119,6 +119,9 @@ set directory=$HOME/.vim/swap//
 " Assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
 
+" Don't include newline characters in visual mode
+set selection=old
+
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =
 

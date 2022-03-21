@@ -142,13 +142,13 @@ nnoremap <space> <nop>
 " Turn off search highlighting until the next search
 nnoremap <leader>l :nohlsearch<CR>
 
-" Mappings for fzf file jumping
+" Mappings for fzf.vim
 nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
 nnoremap <silent> <leader>jaf :Files<CR>
-
-" Mappings for Rg
+nnoremap <silent> <leader>jsf :GFiles?<CR>
 nnoremap <silent> <Leader>jd :Rg <C-R><C-W><CR>
-nnoremap <silent> <Leader>jad :Rg <CR>
+nnoremap <silent> <Leader>jad :Rg<CR>
+nnoremap <silent> <Leader>jh :History<CR>
 
 " Exclude filenames from Rg searches
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)

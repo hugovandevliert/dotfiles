@@ -159,7 +159,7 @@ nnoremap <leader>gp :SignifyHunkDiff<CR>
 nnoremap <leader>gu :SignifyHunkUndo<CR>
 
 " Copy relative path of current buffer
-nnoremap <leader>cf :let @*=expand('%')<CR>
+nnoremap <leader>cf :let @*=expand('%:.')<CR>
 
 " Paste without adding to the register in visual mode
 xnoremap <expr>p 'pgv"'.v:register.'y`>'

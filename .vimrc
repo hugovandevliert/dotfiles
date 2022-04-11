@@ -87,7 +87,7 @@ set incsearch
 " Reduce timeout when hitting the esc key
 set timeoutlen=1000 ttimeoutlen=0
 
-" Write to swap file more often
+" Fire CursorHold event more often, used by vim-signify
 set updatetime=100
 
 " Always display the sign column
@@ -113,14 +113,16 @@ set formatoptions+=j
 " Keep 1000 lines of command history
 set history=1000
 
-" Save swap files to ~/.vim/swap
-set directory=$HOME/.vim/swap//
-
 " Assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
 
 " Don't include newline characters in visual mode
 set selection=old
+
+" Prefer persistent undo over swap files
+set undodir=~/.vim/undo
+set undofile
+set noswapfile
 
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =

@@ -185,12 +185,6 @@ let g:signify_sign_change = '~'
 let g:signify_sign_show_count = 0
 
 " ALE settings
-let g:ale_set_highlights = 0
-let g:ale_linters = {
-\  'ruby': ['rubocop'],
-\  'typescript': ['eslint'],
-\  'javascript': ['eslint'],
-\}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \  '*': ['trim_whitespace'],

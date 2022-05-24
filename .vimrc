@@ -212,9 +212,6 @@ let g:airline_detect_spelllang = 0
 " IndentLine settings
 let g:indentLine_enabled = 0
 
-" CloseTag settings
-let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.html.erb,*.xml'
-
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'
@@ -232,7 +229,6 @@ Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'yggdroot/indentline'
-Plug 'alvan/vim-closetag'
 
 call plug#end()
 

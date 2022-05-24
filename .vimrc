@@ -167,6 +167,9 @@ nnoremap <leader>cf :let @*=expand('%:.')<CR>
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
 xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
+" Toggle spell
+nnoremap <leader>ts :set spell!<CR>
+
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
 

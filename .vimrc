@@ -2,7 +2,7 @@ set nocompatible
 
 filetype plugin indent on
 
-if (has("termguicolors"))
+if (has('termguicolors'))
   set termguicolors
 endif
 
@@ -24,21 +24,14 @@ set visualbell
 " Default encoding
 set encoding=utf-8
 
-" Read filechanges that happen outside of vim
+" Read file changes that happen outside of vim
 set autoread
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Use smart tabs
-set smarttab
-
-" Favor spaces over tabs
-set expandtab
-
 " Use two spaces for a tab
-set shiftwidth=2
-set tabstop=2
+set smarttab expandtab shiftwidth=2 tabstop=2
 
 " Use system clipboard
 set clipboard=unnamed
@@ -55,9 +48,6 @@ set sidescrolloff=4
 " Scroll left/right one character at a time
 set sidescroll=1
 
-" Always create equally sized splits
-set equalalways
-
 " Faster rendering
 set ttyfast
 
@@ -65,10 +55,9 @@ set ttyfast
 set laststatus=2
 
 " Enhanced command line completion
-set wildmenu
-set wildmode=longest:full,full
+set wildmenu wildmode=longest:full,full
 
-" Allow the usage of multiple buffers
+" Allow 'hidden' buffers
 set hidden
 
 " Use case insensitive search, except when using capital letters
@@ -78,11 +67,8 @@ set ignorecase smartcase
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 
-" Highlight searches
-set hlsearch
-
-" Highlight search results during typing
-set incsearch
+" Incrementally highlight searches
+set hlsearch incsearch
 
 " Reduce timeout when hitting the esc key
 set timeoutlen=1000 ttimeoutlen=0
@@ -96,13 +82,11 @@ set signcolumn=yes
 " Move cursor to split window
 set splitbelow splitright
 
-" Enable spellchecking
+" Enable spell checking for English and Dutch
 set spell spelllang=en,nl
 
-" Enable folding based on syntax
-set foldmethod=indent
-set foldlevel=999
-set nofoldenable
+" Enable folding based on indentation
+set foldmethod=indent foldlevelstart=99 nofoldenable
 
 " Don't redraw when executing macros
 set lazyredraw
@@ -120,9 +104,7 @@ set gdefault
 set selection=old
 
 " Prefer persistent undo over swap files
-set undodir=~/.vim/undo
-set undofile
-set noswapfile
+set noswapfile undofile undodir=~/.vim/undo
 
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =
@@ -172,13 +154,13 @@ nnoremap <leader>cf :let @*=expand('%:.')<CR>
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
 xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
-" Toggle spell
-nnoremap <leader>ts :set spell!<CR>
+" Toggle spell locally
+nnoremap <leader>ts :setlocal spell!<CR>
 
 " Toggle line indentations
 nnoremap <leader>tl :IndentLinesToggle<CR>
 
-" Toggle colorcolumn on and off
+" Toggle colorcolumn
 function! ToggleColorColumn()
   if !&colorcolumn
     set colorcolumn=80

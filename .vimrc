@@ -144,6 +144,10 @@ nnoremap <space> <nop>
 " Turn off search highlighting until the next search
 nnoremap <leader>l :nohlsearch<CR>
 
+" Indent without losing selection
+xnoremap < <gv
+xnoremap > >gv
+
 " Mappings for fzf.vim
 nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
 nnoremap <silent> <leader>jaf :Files<CR>

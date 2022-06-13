@@ -155,6 +155,7 @@ nnoremap <silent> <leader>jsf :GFiles?<CR>
 nnoremap <silent> <Leader>jd :Rg <C-R><C-W><CR>
 nnoremap <silent> <Leader>jad :Rg<CR>
 nnoremap <silent> <Leader>jh :History<CR>
+nnoremap <silent> <Leader>be :Buffers<CR>
 
 " Exclude filenames from Rg searches
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
@@ -202,7 +203,7 @@ let g:ale_fixers = {
 \}
 
 " SuperTab settings
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:SuperTabCrMapping = 1
 
 " Airline settings
@@ -231,7 +232,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'yggdroot/indentline'
 
 call plug#end()

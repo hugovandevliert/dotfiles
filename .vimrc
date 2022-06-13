@@ -206,21 +206,12 @@ let g:ale_fixers = {
 let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:SuperTabCrMapping = 1
 
-" Airline settings
-let g:airline_extensions = []
-let g:airline_section_b = ''
-let g:airline_section_y = ''
-let g:airline_section_z = 'line %l/%L - %p%%'
-let g:airline_detect_spell = 0
-let g:airline_detect_spelllang = 0
-
 " IndentLine settings
 let g:indentLine_enabled = 0
 
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'

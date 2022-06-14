@@ -109,6 +109,10 @@ set noswapfile undofile undodir=~/.vim/undo
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =
 
+" Hide statusline when using fzf.vim
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+  \ | autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 " Make Y behave like C and D
 nnoremap Y y$
 
@@ -134,13 +138,15 @@ xnoremap > >gv
 nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
 nnoremap <silent> <leader>jaf :Files<CR>
 nnoremap <silent> <leader>jsf :GFiles?<CR>
-nnoremap <silent> <Leader>jd :Rg <C-R><C-W><CR>
-nnoremap <silent> <Leader>jad :Rg<CR>
+nnoremap <silent> <Leader>jd :Rg!<C-R><C-W><CR>
+nnoremap <silent> <Leader>jad :Rg!<CR>
 nnoremap <silent> <Leader>jh :History<CR>
 nnoremap <silent> <Leader>be :Buffers<CR>
 
 " Exclude filenames from Rg searches
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep(
+  \ 'rg -p --column --no-heading --smart-case --hidden -- '.shellescape(<q-args>),
+  \ 1, fzf#vim#with_preview({ 'options': '--delimiter : --nth 4..' }), <bang>0)
 
 " Mappings for Signify
 nnoremap <leader>gd :SignifyDiff<CR>
@@ -169,6 +175,10 @@ function! ToggleColorColumn()
   endif
 endfunction
 nnoremap <leader>tc :call ToggleColorColumn()<CR>
+
+" fzf.vim settings
+let g:fzf_layout = { 'down': '12' }
+let g:fzf_preview_window = ['right:50%:hidden', 'ctrl-/']
 
 " Signify settings
 let g:signify_sign_change = '~'

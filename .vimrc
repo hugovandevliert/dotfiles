@@ -201,6 +201,10 @@ let g:SuperTabCrMapping = 1
 " IndentLine settings
 let g:indentLine_enabled = 0
 
+" SplitJoin settings
+let g:splitjoin_split_mapping = 'gK'
+let g:splitjoin_join_mapping = 'gJ'
+
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'
@@ -215,6 +219,7 @@ Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 Plug 'dense-analysis/ale'
 Plug 'yggdroot/indentline'
+Plug 'andrewradev/splitjoin.vim'
 
 call plug#end()
 

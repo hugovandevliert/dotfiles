@@ -211,6 +211,9 @@ let g:indentLine_enabled = 0
 let g:splitjoin_split_mapping = 'gK'
 let g:splitjoin_join_mapping = 'gJ'
 
+" vim-rails settings
+let g:rails_path_additions = ['app/*/*']
+
 call plug#begin()
 
 Plug 'joshdick/onedark.vim'

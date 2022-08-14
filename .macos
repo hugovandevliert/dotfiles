@@ -69,3 +69,6 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 
 # TextEdit: start in plain text mode
 defaults write com.apple.TextEdit RichText -int 0
+
+# Simulator: show clicks
+defaults write com.apple.iphonesimulator ShowSingleTouches 1

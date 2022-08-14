@@ -137,14 +137,17 @@ nnoremap <leader>l :nohlsearch<CR>
 xnoremap < <gv
 xnoremap > >gv
 
+" Mappings for ALE
+nnoremap <silent><leader>js :ALEGoToDefinition<CR>
+nnoremap <silent><leader>jst :ALEGoToTypeDefinition<CR>
+
 " Mappings for fzf.vim
-nnoremap <silent> <leader>jf :GFiles --cached --others --exclude-standard<CR>
-nnoremap <silent> <leader>jaf :Files<CR>
-nnoremap <silent> <leader>jsf :GFiles?<CR>
-nnoremap <silent> <Leader>jd :Rg!<C-R><C-W><CR>
-nnoremap <silent> <Leader>jad :Rg!<CR>
-nnoremap <silent> <Leader>jh :History<CR>
-nnoremap <silent> <Leader>be :Buffers<CR>
+nnoremap <silent><leader>jf :GFiles --cached --others --exclude-standard<CR>
+nnoremap <silent><leader>jaf :Files<CR>
+nnoremap <silent><Leader>jd :Rg!<C-R><C-W><CR>
+nnoremap <silent><Leader>jad :Rg!<CR>
+nnoremap <silent><Leader>jh :History<CR>
+nnoremap <silent><Leader>be :Buffers<CR>
 
 " Exclude filenames from Rg searches
 command! -bang -nargs=* Rg call fzf#vim#grep(

@@ -155,9 +155,9 @@ command! -bang -nargs=* Rg call fzf#vim#grep(
   \ 1, fzf#vim#with_preview({ 'options': '--delimiter : --nth 4..' }), <bang>0)
 
 " Mappings for Signify
-nnoremap <leader>gd :SignifyDiff<CR>
-nnoremap <leader>gp :SignifyHunkDiff<CR>
-nnoremap <leader>gu :SignifyHunkUndo<CR>
+nnoremap <silent><leader>gd :SignifyDiff<CR>
+nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
+nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
 
 " Copy relative path of current buffer
 nnoremap <leader>cf :let @*=expand('%:.')<CR>
@@ -170,7 +170,7 @@ xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 nnoremap <leader>ts :setlocal spell!<CR>
 
 " Toggle line indentations
-nnoremap <leader>tl :IndentLinesToggle<CR>
+nnoremap <silent><leader>tl :IndentLinesToggle<CR>
 
 " Toggle colorcolumn
 function! ToggleColorColumn()
@@ -180,7 +180,7 @@ function! ToggleColorColumn()
     set colorcolumn&
   endif
 endfunction
-nnoremap <leader>tc :call ToggleColorColumn()<CR>
+nnoremap <silent><leader>tc :call ToggleColorColumn()<CR>
 
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }

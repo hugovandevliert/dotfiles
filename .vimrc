@@ -116,9 +116,12 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 " Make Y behave like C and D
 nnoremap Y y$
 
-" Allow for some common typo's
+" Allow for some common typos
 command! W :w
+command! Wa :wa
+command! Wq :wq
 command! Q :q
+command! Qa :qa
 
 " Disable Ex mode
 nnoremap Q <nop>

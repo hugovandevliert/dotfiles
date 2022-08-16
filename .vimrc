@@ -9,9 +9,6 @@ endif
 " Show line numbers
 set number
 
-" Show file stats
-set ruler
-
 " Show file in title bar
 set title
 
@@ -51,8 +48,8 @@ set sidescroll=1
 " Faster rendering
 set ttyfast
 
-" Always show a status bar
-set laststatus=2
+" Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
+set laststatus=2 statusline=\%f\ %m%=\ %l:%c\ \ %P
 
 " Enhanced command line completion
 set wildmenu wildmode=longest:full,full
@@ -110,8 +107,7 @@ set noswapfile undofile undodir=~/.vim/undo
 autocmd VimResized * wincmd =
 
 " Hide statusline when using fzf.vim
-autocmd! FileType fzf set laststatus=0 noshowmode noruler
-  \ | autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+autocmd! FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
 " Make Y behave like C and D
 nnoremap Y y$

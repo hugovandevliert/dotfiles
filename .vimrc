@@ -15,6 +15,9 @@ set title
 " Show commands as you type them
 set showcmd
 
+" Highlight current line
+set cursorline
+
 " Blink cursor on error instead of beeping
 set visualbell
 
@@ -168,15 +171,8 @@ nnoremap <leader>ts :setlocal spell!<CR>
 " Toggle line indentations
 nnoremap <silent><leader>tl :IndentLinesToggle<CR>
 
-" Toggle colorcolumn
-function! ToggleColorColumn()
-  if !&colorcolumn
-    set colorcolumn=80
-  else
-    set colorcolumn&
-  endif
-endfunction
-nnoremap <silent><leader>tc :call ToggleColorColumn()<CR>
+" Toggle colorcolumn between 80 and disabled
+nnoremap <expr><silent><leader>tc &colorcolumn ? ':set cc&<CR>' : ':set cc=80<CR>'
 
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }

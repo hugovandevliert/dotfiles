@@ -190,6 +190,7 @@ let g:ale_fixers = {
 \  'typescriptreact': ['eslint'],
 \  'javascript': ['eslint'],
 \  'javascriptreact': ['eslint'],
+\  'scss': ['prettier']
 \}
 
 " SuperTab settings

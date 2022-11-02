@@ -22,6 +22,7 @@ export LANG="en_US.UTF-8"
 # Preferred editor for local and remote sessions
 export EDITOR="vim"
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
 export FZF_DEFAULT_OPTS="--no-mouse"
 
 # rbenv

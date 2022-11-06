@@ -125,9 +125,22 @@ command! Qa :qa
 " Disable Ex mode
 nnoremap Q <nop>
 
-" set <space> as the leader for mappings
+" Set <space> as the leader for mappings
 let mapleader=' '
 nnoremap <space> <nop>
+
+" Open current directory, inspired by tpope's vim-vinegar
+nnoremap <silent>- :call OpenDir()<CR>
+function! OpenDir()
+  const current_file = expand('%')
+  if current_file =~# '^$\|^term:[\/][\/]' " handle empty files
+    silent edit .
+  else
+    silent edit %:h
+    const pattern = printf('\V\^%s\$', fnamemodify(current_file, ':t'))
+    call search(pattern, 'c')
+  endif
+endfunction
 
 " Turn off search highlighting until the next search
 nnoremap <leader>l :nohlsearch<CR>
@@ -205,12 +218,12 @@ let g:rails_path_additions = ['app/*/*']
 
 call plug#begin()
 
+Plug 'hugovandevliert/vim-life'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'

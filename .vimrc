@@ -59,8 +59,8 @@ command! Wq :wq
 command! Q :q
 command! Qa :qa
 
-" Disable Ex mode
-nnoremap Q <nop>
+" Disable Ex mode and repurpose Q to repeat 'q' macro
+nnoremap Q @q
 
 " Set <space> as the leader for mappings
 let mapleader=' '

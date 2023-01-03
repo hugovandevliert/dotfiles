@@ -32,7 +32,6 @@ set updatetime=100   " Fire CursorHold event more often, used by vim-signify
 set visualbell       " Blink cursor on error instead of beeping
 
 set backspace=indent,eol,start        " Allow backspacing over everything in insert mode
-set clipboard=unnamed                 " Use system clipboard
 set fdm=indent fdls=99 nofen          " Enable folding based on indentation
 set hlsearch incsearch                " Incrementally highlight searches
 set ignorecase smartcase              " Use case insensitive search, except when using capital letters
@@ -110,7 +109,7 @@ nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
 nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
 
 " Copy relative path of current buffer
-nnoremap <leader>cf :let @*=expand('%:.')<CR>
+nnoremap <leader>cf :let @+=expand('%:.')<CR> \| :ec 'Copied path to clipboard.'<CR>
 
 " Paste without adding to the register in visual mode
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
@@ -123,7 +122,7 @@ nnoremap <leader>ts :setlocal spell!<CR>
 nnoremap <silent><leader>tl :IndentLinesToggle<CR>
 
 " Toggle colorcolumn between 80 and disabled
-nnoremap <expr><silent><leader>tc &colorcolumn ? ':set cc&<CR>' : ':set cc=80<CR>'
+nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
 
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }

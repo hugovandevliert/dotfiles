@@ -14,7 +14,7 @@ set formatoptions+=j " Delete comment character when joining commented lines
 set gdefault         " Assume the /g flag on :s substitutions
 set hidden           " Allow 'hidden' buffers
 set history=1000     " Keep 1000 lines of command history
-set laststatus=2     " always display the statusline
+set laststatus=2     " Always display the statusline
 set lazyredraw       " Don't redraw when executing macros
 set noswapfile       " Disable swap files
 set nowrap           " Disable wrapping for long lines
@@ -42,6 +42,7 @@ set splitbelow splitright             " Move cursor to split window
 set statusline=\%f\ %m%=\ %l:%c\ \ %P " Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
 set undofile undodir=~/.vim/undo      " Enable persistent undo
 set wildmenu wim=longest:full,full    " Enhanced command line completion
+set virtualedit=block                 " Allow virtual editing in block mode
 
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =

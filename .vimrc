@@ -71,9 +71,9 @@ nnoremap <silent>- :call OpenDir()<CR>
 function! OpenDir()
   const current_file = expand('%')
   if current_file =~# '^$\|^term:[\/][\/]' " handle empty files
-    silent edit .
+    silent keepalt edit .
   else
-    silent edit %:h
+    silent keepalt edit %:h
     const pattern = printf('\V\^%s\$', fnamemodify(current_file, ':t'))
     call search(pattern, 'c')
   endif
@@ -154,6 +154,13 @@ let g:indentLine_enabled = 0
 " vim-rails settings
 let g:rails_path_additions = ['app/*/*']
 
+" auto-pairs settings
+let g:AutoPairsCompatibleMaps = 0
+let g:AutoPairsShortcutBackInsert = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsMapBS = 1
+let g:AutoPairsBSAfter = 0
+
 call plug#begin()
 
 Plug 'hugovandevliert/vim-life'
@@ -162,16 +169,16 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'mhinz/vim-signify'
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-apathy'
 Plug 'slim-template/vim-slim'
-Plug 'dense-analysis/ale'
 Plug 'yggdroot/indentline'
+Plug 'lunarwatcher/auto-pairs'
 
 call plug#end()
 
 syntax on
 colorscheme onedark
-

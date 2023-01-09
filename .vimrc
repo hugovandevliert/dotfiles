@@ -2,10 +2,6 @@ set nocompatible
 
 filetype plugin indent on
 
-if (has('termguicolors'))
-  set termguicolors
-endif
-
 set autoindent       " Auto indent if no filetype-specific indenting is enabled
 set autoread         " Read file changes that happen outside of vim
 set cursorline       " Highlight current line
@@ -25,6 +21,7 @@ set showcmd          " Show commands as you type them
 set sidescroll=1     " Scroll left/right one character at a time
 set sidescrolloff=4  " Keep a few characters visible to the left/right of the cursor
 set signcolumn=yes   " Always display the sign column
+set termguicolors    " Enable true colors
 set title            " Show file in title bar
 set ttimeoutlen=0    " Reduce timeout when hitting the esc key
 set ttyfast          " Faster rendering
@@ -164,7 +161,7 @@ let g:AutoPairsBSAfter = 0
 call plug#begin()
 
 Plug 'hugovandevliert/vim-life'
-Plug 'joshdick/onedark.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
@@ -181,4 +178,4 @@ Plug 'lunarwatcher/auto-pairs'
 call plug#end()
 
 syntax on
-colorscheme onedark
+colorscheme solarized8_flat

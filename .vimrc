@@ -31,6 +31,7 @@ set backspace=indent,eol,start        " Allow backspacing over everything in ins
 set fdm=indent fdls=99 nofen          " Enable folding based on indentation
 set hlsearch incsearch                " Incrementally highlight searches
 set ignorecase smartcase              " Use case insensitive search, except when using capital letters
+set listchars=leadmultispace:\ \ \|   " Display lines at each indentation level
 set smarttab expandtab sw=2 ts=2      " Use two spaces for a tab
 set spell spelllang=en,nl             " Enable spell checking for English and Dutch
 set splitbelow splitright             " Move cursor to split window
@@ -114,8 +115,8 @@ xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 " Toggle spell
 nnoremap <silent><leader>ts :set spell!<CR>
 
-" Toggle line indentations
-nnoremap <silent><leader>tl :IndentLinesToggle<CR>
+" Toggle list to display indentation lines
+nnoremap <silent><leader>tl :set list!<CR>
 
 " Toggle colorcolumn between 80 and off
 nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
@@ -144,9 +145,6 @@ let g:ale_fixers = {
 let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:SuperTabCrMapping = 1
 
-" IndentLine settings
-let g:indentLine_enabled = 0
-
 " vim-rails settings
 let g:rails_path_additions = ['app/*/*']
 
@@ -171,7 +169,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-apathy'
 Plug 'slim-template/vim-slim'
-Plug 'yggdroot/indentline'
 Plug 'lunarwatcher/auto-pairs'
 
 call plug#end()

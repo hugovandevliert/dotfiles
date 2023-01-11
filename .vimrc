@@ -45,15 +45,15 @@ autocmd VimResized * wincmd =
 " Hide statusline when using fzf.vim
 autocmd! FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
-" Make Y behave like C and D
-nnoremap Y y$
-
 " Allow for some common typos
 command! W :w
 command! Wa :wa
 command! Wq :wq
 command! Q :q
 command! Qa :qa
+
+" Make Y behave like C and D
+nnoremap Y y$
 
 " Disable Ex mode and repurpose Q to repeat 'q' macro
 nnoremap Q @q
@@ -104,20 +104,20 @@ nnoremap <silent><leader>gd :SignifyDiff<CR>
 nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
 nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
 
-" Copy relative path of current buffer
-nnoremap <leader>cf :let @+=expand('%:.')<CR> \| :ec 'Copied path to clipboard.'<CR>
+" Copy relative path of current buffer to system clipboard
+nnoremap <silent><leader>cf :let @+=expand('%:.') \| :ec 'Copied path to clipboard.'<CR>
 
 " Paste without adding to the register in visual mode
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
 xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
-" Toggle spell locally
-nnoremap <leader>ts :setlocal spell!<CR>
+" Toggle spell
+nnoremap <silent><leader>ts :set spell!<CR>
 
 " Toggle line indentations
 nnoremap <silent><leader>tl :IndentLinesToggle<CR>
 
-" Toggle colorcolumn between 80 and disabled
+" Toggle colorcolumn between 80 and off
 nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
 
 " fzf.vim settings

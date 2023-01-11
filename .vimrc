@@ -1,5 +1,3 @@
-set nocompatible
-
 filetype plugin indent on
 
 set autoindent       " Auto indent if no filetype-specific indenting is enabled
@@ -12,6 +10,7 @@ set hidden           " Allow 'hidden' buffers
 set history=1000     " Keep 1000 lines of command history
 set laststatus=2     " Always display the statusline
 set lazyredraw       " Don't redraw when executing macros
+set nojoinspaces     " Don't insert two spaces after a period when joining lines
 set noswapfile       " Disable swap files
 set nowrap           " Disable wrapping for long lines
 set number           " Show line numbers
@@ -19,7 +18,7 @@ set scrolloff=4      " Keep a few lines above and below current line
 set selection=old    " Don't include newline characters in visual mode
 set showcmd          " Show commands as you type them
 set sidescroll=1     " Scroll left/right one character at a time
-set sidescrolloff=4  " Keep a few characters visible to the left/right of the cursor
+set sidescrolloff=4  " Keep a few characters visible to the left and right of the cursor
 set signcolumn=yes   " Always display the sign column
 set termguicolors    " Enable true colors
 set title            " Show file in title bar
@@ -37,8 +36,8 @@ set spell spelllang=en,nl             " Enable spell checking for English and Du
 set splitbelow splitright             " Move cursor to split window
 set statusline=\%f\ %m%=\ %l:%c\ \ %P " Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
 set undofile undodir=~/.vim/undo      " Enable persistent undo
-set wildmenu wim=longest:full,full    " Enhanced command line completion
 set virtualedit=block                 " Allow virtual editing in block mode
+set wildmenu wim=longest:full,full    " Enhanced command line completion
 
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =

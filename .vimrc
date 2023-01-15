@@ -159,7 +159,7 @@ let g:AutoPairsBSAfter = 0
 call plug#begin()
 
 Plug 'hugovandevliert/vim-life'
-Plug 'lifepillar/vim-solarized8'
+Plug 'hugovandevliert/vim-solarized-flat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
@@ -175,4 +175,4 @@ Plug 'lunarwatcher/auto-pairs'
 call plug#end()
 
 syntax on
-colorscheme solarized8_flat
+colorscheme solarized_flat

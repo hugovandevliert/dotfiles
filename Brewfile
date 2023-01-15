@@ -11,6 +11,6 @@ brew 'pinentry-mac'
 brew 'ripgrep'
 brew 'vim'
 
-cask 'iterm2'
 cask 'firefox'
 cask 'google-chrome'
+cask 'iterm2-beta'

@@ -72,3 +72,7 @@ defaults write com.apple.TextEdit RichText -int 0
 
 # Simulator: show clicks
 defaults write com.apple.iphonesimulator ShowSingleTouches 1
+
+# iTerm2: set up custom preferences folder
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

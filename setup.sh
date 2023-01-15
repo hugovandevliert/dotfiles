@@ -9,15 +9,13 @@ brew cleanup
 
 echo "Installing ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "Configuring macOS settings..."
-sh .macos
+ln -sfn "$PWD.zshrc" "$HOME/.zshrc"
 
 echo "Creating Code directory..."
 mkdir ~/Code
 
-echo "Linking dotfiles..."
-sh link.sh
+echo "Configuring macOS settings..."
+sh .macos
 
 echo "Configuring git..."
 git config --global commit.gpgsign true
@@ -31,8 +29,13 @@ git config --global user.email hvandevliert@icloud.com
 git config --global user.name "Hugo van de Vliert"
 git config --global user.signingkey "CHANGE_ME"
 
+echo "Configuring iTerm..."
+mkdir ~/.iterm2
+ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode.iterm2.plist"
+
 echo "Configuring vim..."
 cp -R .vim/ ~/.vim
+ln -sfn "$PWD/.vimrc" "$HOME/.vimrc"
 vim +PlugInstall +qa!
 
 echo "Installation complete! Please reboot your machine."

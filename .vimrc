@@ -31,7 +31,7 @@ set backspace=indent,eol,start        " Allow backspacing over everything in ins
 set fdm=indent fdls=99 nofen          " Enable folding based on indentation
 set hlsearch incsearch                " Incrementally highlight searches
 set ignorecase smartcase              " Use case insensitive search, except when using capital letters
-set listchars=leadmultispace:\ \ \|   " Display lines at each indentation level
+set listchars=leadmultispace:\|\      " Display lines at each indentation level
 set smarttab expandtab sw=2 ts=2      " Use two spaces for a tab
 set spell spelllang=en,nl             " Enable spell checking for English and Dutch
 set splitbelow splitright             " Move cursor to split window

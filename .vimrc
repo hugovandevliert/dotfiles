@@ -89,6 +89,7 @@ nnoremap <silent><leader>jst :ALEGoToTypeDefinition<CR>
 
 " Mappings for fzf.vim
 nnoremap <silent><leader>jf :GFiles --cached --others --exclude-standard<CR>
+nnoremap <silent><leader>jgf :GFiles?<CR>
 nnoremap <silent><leader>jaf :Files<CR>
 nnoremap <silent><Leader>jd :Rg!<C-R><C-W><CR>
 nnoremap <silent><Leader>jad :Rg!<CR>

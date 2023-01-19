@@ -96,11 +96,6 @@ nnoremap <silent><Leader>jad :Rg!<CR>
 nnoremap <silent><Leader>jh :History<CR>
 nnoremap <silent><Leader>be :Buffers<CR>
 
-" Exclude filenames from Rg searches
-command! -bang -nargs=* Rg call fzf#vim#grep(
-  \ 'rg -p --column --no-heading --smart-case --hidden -- '.shellescape(<q-args>),
-  \ 1, fzf#vim#with_preview({ 'options': '--delimiter : --nth 4..' }), <bang>0)
-
 " Mappings for Signify
 nnoremap <silent><leader>gd :SignifyDiff<CR>
 nnoremap <silent><leader>gp :SignifyHunkDiff<CR>

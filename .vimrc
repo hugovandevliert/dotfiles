@@ -1,5 +1,3 @@
-filetype plugin indent on
-
 set autoindent       " Auto indent if no filetype-specific indenting is enabled
 set autoread         " Read file changes that happen outside of vim
 set cursorline       " Highlight current line
@@ -170,5 +168,4 @@ Plug 'lunarwatcher/auto-pairs'
 
 call plug#end()
 
-syntax on
 colorscheme solarized_flat

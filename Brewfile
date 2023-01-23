@@ -1,7 +1,8 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/core'
-tap 'homebrew/services'
 
 brew 'fzf'
 brew 'git'
@@ -12,5 +13,6 @@ brew 'ripgrep'
 brew 'vim'
 
 cask 'firefox'
+cask 'font-jetbrains-mono'
 cask 'google-chrome'
 cask 'iterm2-beta'

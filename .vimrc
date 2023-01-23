@@ -1,42 +1,41 @@
-set autoindent       " Auto indent if no filetype-specific indenting is enabled
-set autoread         " Read file changes that happen outside of vim
-set cursorline       " Highlight current line
-set encoding=utf-8   " Default encoding
-set formatoptions+=j " Delete comment character when joining commented lines
-set gdefault         " Assume the /g flag on :s substitutions
-set hidden           " Allow 'hidden' buffers
-set history=1000     " Keep 1000 lines of command history
-set laststatus=2     " Always display the statusline
-set lazyredraw       " Don't redraw when executing macros
-set nojoinspaces     " Don't insert two spaces after a period when joining lines
-set noswapfile       " Disable swap files
-set nowrap           " Disable wrapping for long lines
-set number           " Show line numbers
-set scrolloff=4      " Keep a few lines above and below current line
-set selection=old    " Don't include newline characters in visual mode
-set showcmd          " Show commands as you type them
-set sidescroll=1     " Scroll left/right one character at a time
-set sidescrolloff=4  " Keep a few characters visible to the left and right of the cursor
-set signcolumn=yes   " Always display the sign column
-set termguicolors    " Enable true colors
-set title            " Show file in title bar
-set ttimeoutlen=0    " Reduce timeout when hitting the esc key
-set ttyfast          " Faster rendering
-set updatetime=100   " Fire CursorHold event more often, used by vim-signify
-set visualbell       " Blink cursor on error instead of beeping
-
-set backspace=indent,eol,start        " Allow backspacing over everything in insert mode
-set fdm=indent fdls=99 nofen          " Enable folding based on indentation
-set hlsearch incsearch                " Incrementally highlight searches
-set ignorecase smartcase              " Use case insensitive search, except when using capital letters
-set listchars=leadmultispace:\|\      " Display lines at each indentation level
-set smarttab expandtab sw=2 ts=2      " Use two spaces for a tab
-set spell spelllang=en,nl             " Enable spell checking for English and Dutch
-set splitbelow splitright             " Move cursor to split window
-set statusline=\%f\ %m%=\ %l:%c\ \ %P " Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
-set undofile undodir=~/.vim/undo      " Enable persistent undo
-set virtualedit=block                 " Allow virtual editing in block mode
-set wildmenu wim=longest:full,full    " Enhanced command line completion
+set autoindent                     " Auto indent if no filetype-specific indenting is enabled
+set autoread                       " Read file changes that happen outside of vim
+set backspace=indent,eol,start     " Allow backspacing over everything in insert mode
+set cursorline                     " Highlight current line
+set encoding=utf-8                 " Default encoding
+set fdm=indent fdls=99 nofen       " Enable folding based on indentation
+set formatoptions+=j               " Delete comment character when joining commented lines
+set gdefault                       " Assume the /g flag on :s substitutions
+set hidden                         " Allow 'hidden' buffers
+set history=1000                   " Keep 1000 lines of command history
+set hlsearch incsearch             " Incrementally highlight searches
+set ignorecase smartcase           " Use case insensitive search, except when using capital letters
+set laststatus=2                   " Always display the statusline
+set lazyredraw                     " Don't redraw when executing macros
+set listchars=leadmultispace:\|\   " Display lines at each indentation level
+set nojoinspaces                   " Don't insert two spaces after a period when joining lines
+set noswapfile                     " Disable swap files
+set nowrap                         " Disable wrapping for long lines
+set number                         " Show line numbers
+set scrolloff=4                    " Keep a few lines above and below current line
+set selection=old                  " Don't include newline characters in visual mode
+set showcmd                        " Show commands as you type them
+set sidescroll=1                   " Scroll left/right one character at a time
+set sidescrolloff=4                " Keep a few characters visible to the left and right of the cursor
+set signcolumn=yes                 " Always display the sign column
+set smarttab expandtab sw=2 ts=2   " Use two spaces for a tab
+set spell spelllang=en,nl          " Enable spell checking for English and Dutch
+set splitbelow splitright          " Move cursor to split window
+set stl=\%f\ %m%=\ %l:%c\ \ %P     " Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
+set termguicolors                  " Enable true colors
+set title                          " Show file in title bar
+set ttimeoutlen=0                  " Reduce timeout when hitting the esc key
+set ttyfast                        " Faster rendering
+set undofile undodir=~/.vim/undo   " Enable persistent undo
+set updatetime=100                 " Fire CursorHold event more often, used by vim-signify
+set virtualedit=block              " Allow virtual editing in block mode
+set visualbell                     " Blink cursor on error instead of beeping
+set wildmenu wim=longest:full,full " Enhanced command line completion
 
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =

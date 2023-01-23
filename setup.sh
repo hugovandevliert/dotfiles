@@ -37,6 +37,6 @@ ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode
 echo "Configuring vim..."
 cp -R .vim/ ~/.vim
 ln -sfn "$PWD/.vimrc" "$HOME/.vimrc"
-vim +PlugInstall +qa!
+vim -Esu ~/.vimrc +PlugInstall +qall
 
 echo "Installation complete! Please reboot your machine."

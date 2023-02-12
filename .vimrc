@@ -161,8 +161,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-apathy'
-Plug 'slim-template/vim-slim'
 Plug 'lunarwatcher/auto-pairs'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 call plug#end()
 

@@ -143,7 +143,6 @@ let g:SuperTabCrMapping = 1
 let g:rails_path_additions = ['app/*/*']
 
 " auto-pairs settings
-let g:AutoPairsCompatibleMaps = 0
 let g:AutoPairsShortcutBackInsert = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsMapBS = 1

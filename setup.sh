@@ -10,7 +10,7 @@ brew cleanup
 
 echo "Installing ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-ln -sfn "$PWD.zshrc" "$HOME/.zshrc"
+ln -sfn "$PWD/.zshrc" "$HOME/.zshrc"
 
 echo "Creating Code directory..."
 mkdir ~/Code

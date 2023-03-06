@@ -28,10 +28,6 @@ if which pyenv > /dev/null; then
   PATH=$(pyenv root)/shims:$PATH
 fi
 
-# Don't enter autocomplete menu when pressing tab twice
-setopt noautomenu
-setopt nomenucomplete
-
 # Custom aliases
 alias dot="cd ~/code/dotfiles"
 alias gbd="git branch -D"

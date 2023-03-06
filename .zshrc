@@ -18,6 +18,9 @@ export FZF_DEFAULT_OPTS="--no-mouse"
 # Github GPG
 export GPG_TTY=$(tty)
 
+# Prevent some regularly used commands from being added to ~/.zsh_history
+HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds)"
+
 # rbenv
 if which rbenv > /dev/null; then
   eval "$(rbenv init - zsh)"

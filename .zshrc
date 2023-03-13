@@ -35,3 +35,11 @@ fi
 alias dot="cd ~/code/dotfiles"
 alias gbd="git branch -D"
 alias gs="git status"
+
+# Open a Pull Request for the current branch against master on github.com
+function gopr() {
+  github_url=`git ls-remote --get-url | sed -Ee "s#(git@|git://)#https://#" -e "s@com:@com/@" -e "s%\.git$%%"`
+  main_branch=`git branch | cut -c 3- | grep -E '^master$|^main$'`
+  current_branch=$(git_current_branch)
+  open $github_url"/compare/"$main_branch"..."$current_branch"?expand=1"
+}

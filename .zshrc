@@ -6,14 +6,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export LANG="en_US.UTF-8"
-
-# Preferred editor for local and remote sessions
 export EDITOR="vim"
+export LANG="en_US.UTF-8"
 
 # FZF settings
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
-export FZF_DEFAULT_OPTS="--no-mouse"
+export FZF_DEFAULT_OPTS="--no-mouse --color=fg+:#fdf6e3,bg+:#5d6d6f,pointer:#fdf6e3,marker:#859900,gutter:-1,prompt:-1"
 
 # Github GPG
 export GPG_TTY=$(tty)

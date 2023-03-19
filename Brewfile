@@ -6,9 +6,7 @@ tap 'homebrew/core'
 
 brew 'fzf'
 brew 'git'
-brew 'gnupg'
 brew 'htop'
-brew 'pinentry-mac'
 brew 'ripgrep'
 brew 'vim'
 

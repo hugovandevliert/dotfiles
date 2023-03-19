@@ -22,13 +22,13 @@ echo "Configuring git..."
 git config --global commit.gpgsign true
 git config --global core.editor vim
 git config --global core.ignorecase false
-git config --global gpg.program gpg
+git config --global gpg.format ssh
 git config --global merge.tool vimdiff
 git config --global pull.ff only
 git config --global pull.rebase true
 git config --global user.email hvandevliert@icloud.com
 git config --global user.name "Hugo van de Vliert"
-git config --global user.signingkey "CHANGE_ME"
+git config --global user.signingkey "<path_to_public_ssh_key"
 
 echo "Configuring iTerm..."
 mkdir ~/.iterm2

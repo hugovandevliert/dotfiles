@@ -2,6 +2,7 @@ set autoindent                     " Auto indent if no filetype-specific indenti
 set autoread                       " Read file changes that happen outside of vim
 set backspace=indent,eol,start     " Allow backspacing over everything in insert mode
 set cursorline                     " Highlight current line
+set display=truncate               " Truncate very long lines
 set encoding=utf-8                 " Default encoding
 set fdm=indent fdls=99 nofen       " Enable folding based on indentation
 set formatoptions+=j               " Delete comment character when joining commented lines

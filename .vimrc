@@ -158,10 +158,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
+Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-surround'
 Plug 'lunarwatcher/auto-pairs'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 

@@ -26,7 +26,7 @@ set sidescrolloff=4                " Keep a few characters visible to the left a
 set signcolumn=yes                 " Always display the sign column
 set smarttab expandtab sw=2 ts=2   " Use two spaces for a tab
 set spell spelllang=en,nl          " Enable spell checking for English and Dutch
-set splitbelow splitright          " Move cursor to split window
+set splitbelow splitright          " Move cursor to the expected split window
 set stl=\%f\ %m%=\ %l:%c\ \ %P     " Custom statusline, looks like this: .vimrc [+] <> 10:15 TOP
 set termguicolors                  " Enable true colors
 set title                          " Show file in title bar
@@ -41,8 +41,12 @@ set wildmenu wim=longest:full,full " Enhanced command line completion
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =
 
+" Only highlight current line in the active window
+autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
 " Hide statusline when using fzf.vim
-autocmd! FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
+autocmd FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
 " Allow for some common typos
 command! W :w

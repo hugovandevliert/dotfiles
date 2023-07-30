@@ -169,6 +169,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'lunarwatcher/auto-pairs'
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 call plug#end()

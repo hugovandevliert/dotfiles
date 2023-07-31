@@ -13,7 +13,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ln -sfn "$PWD/.zshrc" "$HOME/.zshrc"
 
 echo "Creating Code directory..."
-mkdir ~/Code
+mkdir -p "$HOME/Code"
 
 echo "Configuring macOS settings..."
 sh .macos
@@ -27,15 +27,19 @@ git config --global merge.tool vimdiff
 git config --global pull.rebase true
 git config --global user.email hvandevliert@icloud.com
 git config --global user.name "Hugo van de Vliert"
-git config --global user.signingkey "<path_to_public_ssh_key"
+git config --global user.signingkey "$HOME/.ssh/id_ed25519.pub"
 
 echo "Configuring iTerm..."
-mkdir ~/.iterm2
+mkdir -p "$HOME/.iterm2"
 ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode.iterm2.plist"
 
 echo "Configuring vim..."
-cp -R .vim/ ~/.vim
+cp -R "$PWD/.vim/" "$HOME/.vim"
 ln -sfn "$PWD/.vimrc" "$HOME/.vimrc"
-vim -Esu ~/.vimrc +PlugInstall +qall
+vim -Esu "$HOME/.vimrc" +PlugInstall +qall
+
+echo "Configuring ssh..."
+mkdir -p "$HOME/.ssh"
+ln -sfn "$PWD/.ssh/config" "$HOME/.ssh/config"
 
 echo "Installation complete! Please reboot your machine."

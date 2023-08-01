@@ -2,6 +2,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 
+brew 'bat'
 brew 'fzf'
 brew 'git'
 brew 'htop'

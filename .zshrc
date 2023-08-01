@@ -13,6 +13,10 @@ export LANG="en_US.UTF-8"
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
 export FZF_DEFAULT_OPTS="--no-mouse --color=fg+:#fdf6e3,bg+:#5d6d6f,pointer:#fdf6e3,marker:#859900,gutter:-1,prompt:-1"
 
+# BAT settings
+export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo 'Solarized (dark)' || echo 'Solarized (light)')"
+alias cat="bat"
+
 # Prevent some regularly used commands from being added to ~/.zsh_history
 HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds)"
 

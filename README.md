@@ -4,4 +4,4 @@ This repository contains configuration files for my development environment on M
 
 Running `./setup.sh` will set up everything.
 
-<!-- insert screenshots here -->
+<img width="400" alt="light" src="https://github.com/hugovandevliert/dotfiles/assets/25246106/86c593e2-0807-4e0e-a6be-1218c7e10fc9"><img width="400" alt="dark" src="https://github.com/hugovandevliert/dotfiles/assets/25246106/66364bee-1749-45d5-b5eb-d5b1e5d31d11">

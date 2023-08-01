@@ -55,6 +55,10 @@ command! Wq :wq
 command! Q :q
 command! Qa :qa
 
+" Sane movement when wrap is enabled
+nnoremap j gj
+nnoremap k gk
+
 " Make Y behave like C and D
 nnoremap Y y$
 

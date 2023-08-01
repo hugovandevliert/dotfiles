@@ -175,6 +175,7 @@ Plug 'tpope/vim-surround'
 Plug 'lunarwatcher/auto-pairs'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn' }
 
 call plug#end()
 

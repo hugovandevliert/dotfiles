@@ -9,6 +9,7 @@ brew 'git-delta'
 brew 'htop'
 brew 'ripgrep'
 brew 'vim'
+brew 'yarn'
 
 cask 'firefox'
 cask 'font-jetbrains-mono'

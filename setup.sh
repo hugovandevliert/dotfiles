@@ -29,6 +29,20 @@ git config --global user.email hvandevliert@icloud.com
 git config --global user.name "Hugo van de Vliert"
 git config --global user.signingkey "$HOME/.ssh/id_ed25519.pub"
 
+# delta settings
+git config --global interactive.diffFilter "delta --color-only"
+git config --global core.pager 'delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"'
+git config --global delta.navigate true
+git config --global delta.hyperlinks true
+git config --global delta.keep-plus-minus-markers false
+git config --global delta.blame-palette normal
+git config --global delta.blame-format "{commit:<8} {author:<15.15} {timestamp:<16}"
+git config --global delta.blame-timestamp-output-format "%F %R"
+git config --global delta.light-mode.light true
+git config --global delta.light-mode.syntax-theme "Solarized (light)"
+git config --global delta.dark-mode.light false
+git config --global delta.dark-mode.syntax-theme "Solarized (dark)"
+
 echo "Configuring iTerm..."
 mkdir -p "$HOME/.iterm2"
 ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode.iterm2.plist"

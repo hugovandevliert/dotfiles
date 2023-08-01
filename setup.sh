@@ -30,8 +30,8 @@ git config --global user.name "Hugo van de Vliert"
 git config --global user.signingkey "$HOME/.ssh/id_ed25519.pub"
 
 # delta settings
-git config --global interactive.diffFilter "delta --color-only"
 git config --global core.pager 'delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"'
+git config --global interactive.diffFilter 'delta --color-only --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"'
 git config --global delta.navigate true
 git config --global delta.hyperlinks true
 git config --global delta.keep-plus-minus-markers false

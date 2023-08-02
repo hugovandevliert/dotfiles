@@ -33,9 +33,6 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
-
 # Finder: show hidden files by default (⌘ + ⇧ + . to toggle)
 defaults write com.apple.finder AppleShowAllFiles -boolean true
 

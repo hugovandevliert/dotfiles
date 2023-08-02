@@ -1,6 +1,7 @@
 set autoindent                     " Auto indent if no filetype-specific indenting is enabled
 set autoread                       " Read file changes that happen outside of vim
 set backspace=indent,eol,start     " Allow backspacing over everything in insert mode
+set completeopt=menu,menuone       " Disable preview window for completion
 set cursorline                     " Highlight current line
 set display=truncate               " Truncate very long lines
 set encoding=utf-8                 " Default encoding
@@ -133,6 +134,7 @@ let g:signify_sign_show_count = 0
 
 " ALE settings
 let g:ale_virtualtext_cursor = 'current'
+let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \  '*': ['trim_whitespace'],

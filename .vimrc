@@ -146,10 +146,6 @@ let g:ale_fixers = {
 \  'json': ['jq']
 \}
 
-" SuperTab settings
-let g:SuperTabDefaultCompletionType = '<c-n>'
-let g:SuperTabCrMapping = 1
-
 " vim-rails settings
 let g:rails_path_additions = ['app/*/*']
 
@@ -165,7 +161,6 @@ Plug 'hugovandevliert/vim-life'
 Plug 'hugovandevliert/vim-solarized-flat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'ervandew/supertab'
 Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-apathy'
@@ -175,7 +170,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'lunarwatcher/auto-pairs'
-Plug 'AndrewRadev/tagalong.vim'
+Plug 'andrewradev/tagalong.vim'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn' }
 

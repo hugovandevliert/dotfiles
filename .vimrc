@@ -83,9 +83,6 @@ function! OpenDir()
   endif
 endfunction
 
-" Turn off search highlighting until the next search
-nnoremap <leader>l :nohlsearch<CR>
-
 " Indent without losing selection
 xnoremap < <gv
 xnoremap > >gv
@@ -171,6 +168,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'lunarwatcher/auto-pairs'
 Plug 'andrewradev/tagalong.vim'
+Plug 'romainl/vim-cool'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn' }
 

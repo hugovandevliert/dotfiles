@@ -154,6 +154,8 @@
 	<integer>4</integer>
 	<key>MinimalTabStyleOutlineStrength</key>
 	<real>0.10000000149011612</real>
+	<key>NeverBlockSystemShutdown</key>
+	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47D8500-B118-42DE-81B6-1F00A717DEEA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_A47D8500-B118-42DE-81B6-1F00A717DEEA_selection</key>

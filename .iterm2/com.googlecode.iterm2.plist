@@ -1911,6 +1911,8 @@
 	<integer>2</integer>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseMetal</key>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>

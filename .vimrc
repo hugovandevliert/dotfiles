@@ -88,6 +88,8 @@ xnoremap < <gv
 xnoremap > >gv
 
 " Mappings for ALE
+nnoremap <silent>]a :ALENextWrap<CR>
+nnoremap <silent>[a :ALEPreviousWrap<CR>
 nnoremap <silent><leader>js :ALEGoToDefinition<CR>
 nnoremap <silent><leader>jst :ALEGoToTypeDefinition<CR>
 

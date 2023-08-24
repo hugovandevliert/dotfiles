@@ -49,6 +49,9 @@ autocmd WinLeave * setlocal nocursorline
 " Hide statusline when using fzf.vim
 autocmd FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
+" Disable spell checking in ALE preview windows
+autocmd FileType ale-preview-selection setlocal nospell
+
 " Allow for some common typos
 command! W :w
 command! Wa :wa

@@ -46,11 +46,14 @@ autocmd VimResized * wincmd =
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" Hide statusline when using fzf.vim
+" Hide statusline when in fzf windows
 autocmd FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
 " Disable spell checking in ALE preview windows
 autocmd FileType ale-preview-selection setlocal nospell
+
+" Treat properties with hyphens as a single words in css files
+autocmd FileType css,less,scss setlocal iskeyword+=-
 
 " Allow for some common typos
 command! W :w

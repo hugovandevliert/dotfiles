@@ -126,6 +126,9 @@ nnoremap <silent><leader>tl :set list!<CR>
 " Toggle colorcolumn between 80 and off
 nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
 
+" Toggle wrap
+nnoremap <silent><leader>tw :set wrap!<CR>
+
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }
 let g:fzf_preview_window = ['right:50%:hidden', 'ctrl-/']

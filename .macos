@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
-
 # Move windows by using ctl + cmd + mouse
-defaults write -g NSWindowShouldDragOnGesture -bool true
+defaults write NSGlobalDomain NSWindowShouldDragOnGesture -bool true
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -69,6 +65,9 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 
 # Safari: enable statusbar
 defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+
+# Safari: show complete URL in the address bar
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # TextEdit: start in plain text mode
 defaults write com.apple.TextEdit RichText -int 0

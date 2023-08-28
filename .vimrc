@@ -72,9 +72,13 @@ nnoremap Y y$
 " Disable Ex mode and repurpose Q to repeat 'q' macro
 nnoremap Q @q
 
-" Set <space> as the leader for mappings
-let mapleader=' '
-nnoremap <space> <nop>
+" Indent without losing selection
+xnoremap < <gv
+xnoremap > >gv
+
+" Paste without adding to the register in visual mode
+xnoremap <expr>p 'pgv"'.v:register.'y`>'
+xnoremap <expr>P 'Pgv"'.v:register.'y`>'
 
 " Open current directory, inspired by tpope's vim-vinegar
 nnoremap <silent>- :call OpenDir()<CR>
@@ -89,9 +93,24 @@ function! OpenDir()
   endif
 endfunction
 
-" Indent without losing selection
-xnoremap < <gv
-xnoremap > >gv
+" Set <space> as the leader for mappings
+let mapleader=' '
+nnoremap <space> <nop>
+
+" Copy relative path of current buffer to system clipboard
+nnoremap <silent><leader>cf :let @+=expand('%:.') \| :ec 'Copied path to clipboard.'<CR>
+
+" Toggle spell
+nnoremap <silent><leader>ts :set spell!<CR>
+
+" Toggle list to display indentation lines
+nnoremap <silent><leader>tl :set list!<CR>
+
+" Toggle colorcolumn between 80 and off
+nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
+
+" Toggle wrap
+nnoremap <silent><leader>tw :set wrap!<CR>
 
 " Mappings for ALE
 nnoremap <silent>]a :ALENextWrap<CR>
@@ -106,31 +125,12 @@ nnoremap <silent><leader>jaf :Files<CR>
 nnoremap <silent><Leader>jd :Rg!<C-R><C-W><CR>
 nnoremap <silent><Leader>jad :Rg!<CR>
 nnoremap <silent><Leader>jh :History<CR>
-nnoremap <silent><Leader>be :Buffers<CR>
+nnoremap <silent><Leader>jb :Buffers<CR>
 
 " Mappings for Signify
 nnoremap <silent><leader>gd :SignifyDiff<CR>
 nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
 nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
-
-" Copy relative path of current buffer to system clipboard
-nnoremap <silent><leader>cf :let @+=expand('%:.') \| :ec 'Copied path to clipboard.'<CR>
-
-" Paste without adding to the register in visual mode
-xnoremap <expr>p 'pgv"'.v:register.'y`>'
-xnoremap <expr>P 'Pgv"'.v:register.'y`>'
-
-" Toggle spell
-nnoremap <silent><leader>ts :set spell!<CR>
-
-" Toggle list to display indentation lines
-nnoremap <silent><leader>tl :set list!<CR>
-
-" Toggle colorcolumn between 80 and off
-nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
-
-" Toggle wrap
-nnoremap <silent><leader>tw :set wrap!<CR>
 
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }

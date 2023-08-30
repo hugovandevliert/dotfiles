@@ -25,6 +25,7 @@ git config --global core.ignorecase false
 git config --global gpg.format ssh
 git config --global merge.tool vimdiff
 git config --global pull.rebase true
+git config --global fetch.prune true
 git config --global user.email hvandevliert@icloud.com
 git config --global user.name "Hugo van de Vliert"
 git config --global user.signingkey "$HOME/.ssh/id_ed25519.pub"

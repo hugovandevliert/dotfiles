@@ -141,7 +141,7 @@ let g:signify_sign_change = '~'
 let g:signify_sign_show_count = 0
 
 " ALE settings
-let g:ale_virtualtext_cursor = 'current'
+let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {

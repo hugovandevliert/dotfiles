@@ -154,6 +154,9 @@ let g:ale_fixers = {
 \  'json': ['jq']
 \}
 
+" vim-ruby settings
+let g:ruby_indent_assignment_style = 'variable'
+
 " vim-rails settings
 let g:rails_path_additions = ['app/*/*']
 

@@ -184,8 +184,8 @@ Plug 'lunarwatcher/auto-pairs'
 Plug 'andrewradev/tagalong.vim'
 Plug 'romainl/vim-cool'
 Plug 'vimpostor/vim-lumen'
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app && yarn' }
+Plug 'slim-template/vim-slim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn' }
 
 call plug#end()
 

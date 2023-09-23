@@ -12,8 +12,8 @@ echo "Installing ohmyzsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ln -sfn "$PWD/.zshrc" "$HOME/.zshrc"
 
-echo "Creating Code directory..."
-mkdir -p "$HOME/Code"
+echo "Creating dev directory..."
+mkdir -p "$HOME/dev"
 
 echo "Configuring macOS settings..."
 sh .macos

@@ -31,7 +31,7 @@ if which pyenv > /dev/null; then
 fi
 
 # Custom aliases
-alias dot="cd ~/code/dotfiles"
+alias dot="cd ~/dev/dotfiles"
 alias gbd="git branch -D"
 alias gs="git status"
 

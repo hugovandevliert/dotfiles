@@ -18,7 +18,7 @@ export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null
 alias cat="bat"
 
 # Prevent some regularly used commands from being added to ~/.zsh_history
-HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds)"
+HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
 
 # rbenv
 if which rbenv > /dev/null; then

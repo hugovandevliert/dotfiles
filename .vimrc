@@ -76,6 +76,10 @@ nnoremap Q @q
 xnoremap < <gv
 xnoremap > >gv
 
+" Easy quickfix list navigation
+nnoremap ]q :cn<CR>
+nnoremap [q :cp<CR>
+
 " Paste without adding to the register in visual mode
 xnoremap <expr>p 'pgv"'.v:register.'y`>'
 xnoremap <expr>P 'Pgv"'.v:register.'y`>'

@@ -7,7 +7,7 @@ brew bundle --no-lock >> /dev/null
 brew cleanup >> /dev/null
 
 echo "Updating vim plugins..."
-vim -Esu "$HOME/.vimrc" +PlugInstall +qall
+vim -Esu "$HOME/.vimrc" +PlugInstall +PlugUpdate +qall
 
 echo "Updating ohmyzsh..."
 "$ZSH/tools/upgrade.sh" >> /dev/null

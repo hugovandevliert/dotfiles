@@ -78,3 +78,6 @@ defaults write com.apple.iphonesimulator ShowSingleTouches 1
 # iTerm2: set up custom preferences folder
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Remap Caps Lock to Escape
+hidutil property --set '{"UserKeyMapping": [{"HIDKeyboardModifierMappingSrc": 0x700000039, "HIDKeyboardModifierMappingDst": 0x700000029}]}' >> /dev/null

@@ -2,6 +2,16 @@
 
 This repository contains configuration files for my development environment on MacOS. It includes a setup for my editor (vim), shell (zsh) and terminal (iTerm2).
 
-Running `./setup` will set up everything.
-
 <img width="400" alt="light" src="https://github.com/hugovandevliert/dotfiles/assets/25246106/86c593e2-0807-4e0e-a6be-1218c7e10fc9"><img width="400" alt="dark" src="https://github.com/hugovandevliert/dotfiles/assets/25246106/66364bee-1749-45d5-b5eb-d5b1e5d31d11">
+
+## Setup
+
+First, ensure Apple's command line tools are installed:
+```
+xcode-select --install
+```
+
+And then the setup script:
+```
+./setup
+```

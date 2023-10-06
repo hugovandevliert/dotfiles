@@ -62,4 +62,8 @@ mkdir -p ~/Library/LaunchAgents
 cp "$PWD/escape-map.plist" ~/Library/LaunchAgents/custom.escape-map.plist
 launchctl load -w ~/Library/LaunchAgents/custom.escape-map.plist
 
+echo "Configuring daemon that preloads ssh keys from keychain..."
+cp "$PWD/ssh-add.plist" ~/Library/LaunchAgents/custom.ssh-add.plist
+launchctl load -w ~/Library/LaunchAgents/custom.ssh-add.plist
+
 echo "Installation complete! Please reboot your machine."

@@ -11,7 +11,28 @@ First, ensure Apple's command line tools are installed:
 xcode-select --install
 ```
 
-And then the setup script:
+Create a `dev` directory:
+```
+mkdir -p ~/dev && cd ~/dev
+```
+
+Clone this repository:
+```
+git clone git@github.com:hugovandevliert/dotfiles.git && cd dotfiles
+```
+
+And then run the setup script:
 ```
 ./setup
 ```
+
+## Manual steps
+
+Not everything can be automated.
+
+* Copy ssh keys from iCloud into `~/.ssh`.
+* Add them to KeyChain:
+  ```
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+  ```
+* Download vim wordlists by running `set spell` in vim.

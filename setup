@@ -57,4 +57,9 @@ echo "Configuring ssh..."
 mkdir -p "$HOME/.ssh"
 ln -sfn "$PWD/.ssh/config" "$HOME/.ssh/config"
 
+echo "Configuring daemon that remaps Caps Lock to Escape..."
+mkdir -p ~/Library/LaunchAgents
+cp "$PWD/escape-map.plist" ~/Library/LaunchAgents/custom.escape-map.plist
+launchctl load -w ~/Library/LaunchAgents/custom.escape-map.plist
+
 echo "Installation complete! Please reboot your machine."

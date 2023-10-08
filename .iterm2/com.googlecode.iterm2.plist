@@ -1889,6 +1889,8 @@
 	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
+	<key>ShowSessionRestoredBanner</key>
+	<false/>
 	<key>Size Changes Affect Profile</key>
 	<false/>
 	<key>SoundForEsc</key>

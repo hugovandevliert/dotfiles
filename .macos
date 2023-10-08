@@ -26,6 +26,9 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Use F1, F2, etc. as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
 # Pressing fn key will do nothing
 defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 

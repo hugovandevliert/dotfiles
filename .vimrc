@@ -92,7 +92,7 @@ function! OpenDir()
     silent keepalt edit .
   else
     silent keepalt edit %:h
-    const pattern = printf('^%s\/\?\%(\s\{2,}\|$\)', fnamemodify(current_file, ':t'))
+    const pattern = printf('^%s\/\?\%(\s\{2,}\|\s-->\s\|$\)', fnamemodify(current_file, ':t'))
     call search(pattern, 'c')
   endif
 endfunction

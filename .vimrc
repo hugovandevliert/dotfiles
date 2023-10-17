@@ -189,7 +189,7 @@ Plug 'andrewradev/tagalong.vim'
 Plug 'romainl/vim-cool'
 Plug 'vimpostor/vim-lumen'
 Plug 'slim-template/vim-slim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 call plug#end()
 

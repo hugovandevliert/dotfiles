@@ -21,6 +21,7 @@ set nowrap                         " Disable wrapping for long lines
 set number                         " Show line numbers
 set scrolloff=4                    " Keep a few lines above and below current line
 set selection=old                  " Don't include newline characters in visual mode
+set shortmess+=c                   " Disable completion messages
 set showcmd                        " Show commands as you type them
 set sidescroll=1                   " Scroll left/right one character at a time
 set sidescrolloff=4                " Keep a few characters visible to the left and right of the cursor

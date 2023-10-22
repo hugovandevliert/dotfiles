@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="simple"
 
-plugins=(git)
+plugins=(asdf git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,16 +19,6 @@ alias cat="bat"
 
 # Prevent some regularly used commands from being added to ~/.zsh_history
 HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
-
-# rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init - zsh)"
-fi
-
-# pyenv
-if which pyenv > /dev/null; then
-  PATH=$(pyenv root)/shims:$PATH
-fi
 
 # Custom aliases
 alias dot="cd ~/dev/dotfiles"

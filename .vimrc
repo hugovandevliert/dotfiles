@@ -40,6 +40,10 @@ set virtualedit=block              " Allow virtual editing in block mode
 set visualbell                     " Blink cursor on error instead of beeping
 set wildmenu wim=longest:full,full " Enhanced command line completion
 
+" Use a line cursor shape in insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
 " Automatically equalise splits when Vim is resized
 autocmd VimResized * wincmd =
 

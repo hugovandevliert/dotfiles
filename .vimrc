@@ -155,10 +155,10 @@ let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \  '*': ['trim_whitespace'],
-\  'typescript': ['eslint'],
-\  'typescriptreact': ['eslint'],
-\  'javascript': ['eslint'],
-\  'javascriptreact': ['eslint'],
+\  'typescript': ['eslint', 'prettier'],
+\  'typescriptreact': ['eslint', 'prettier'],
+\  'javascript': ['eslint', 'prettier'],
+\  'javascriptreact': ['eslint', 'prettier'],
 \  'scss': ['prettier'],
 \  'json': ['jq']
 \}

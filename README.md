@@ -30,9 +30,9 @@ And then run the setup script:
 
 Not everything can be automated.
 
-* Copy ssh keys from iCloud into `~/.ssh`.
-* Add them to KeyChain:
-  ```
+* Copy ssh keys from iCloud into `~/.ssh` and add them to KeyChain:
+  ```zsh
   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
   ```
 * Download vim wordlists by running `set spell` in vim.
+* Install any desired [asdf plugins](https://asdf-vm.com/guide/getting-started.html#_4-install-a-plugin).

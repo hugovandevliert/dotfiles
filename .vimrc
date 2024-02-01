@@ -141,6 +141,11 @@ nnoremap <silent><leader>gd :SignifyDiff<CR>
 nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
 nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
 
+" Mappings for copilot.vim
+inoremap <C-]> <Plug>(copilot-next)
+inoremap <C-L> <Plug>(copilot-accept-word)
+inoremap <C-\> <Plug>(copilot-suggest)
+
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }
 let g:fzf_preview_window = ['right:50%:hidden', 'ctrl-/']
@@ -151,7 +156,6 @@ let g:signify_sign_show_count = 0
 
 " ALE settings
 let g:ale_virtualtext_cursor = 'disabled'
-let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \  '*': ['trim_whitespace'],
@@ -189,6 +193,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
+Plug 'github/copilot.vim'
 Plug 'lunarwatcher/auto-pairs'
 Plug 'andrewradev/tagalong.vim'
 Plug 'romainl/vim-cool'

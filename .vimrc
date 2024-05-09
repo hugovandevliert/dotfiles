@@ -54,8 +54,8 @@ autocmd WinLeave * setlocal nocursorline
 " Hide statusline when in fzf windows
 autocmd FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
-" Disable spell checking in ALE preview windows
-autocmd FileType ale-preview-selection setlocal nospell
+" Disable spell checking for certain buffer types
+autocmd FileType ale-preview-selection,diff,gitrebase setlocal nospell
 
 " Treat properties with hyphens as a single words in css files
 autocmd FileType css,less,scss setlocal iskeyword+=-

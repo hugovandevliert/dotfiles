@@ -136,10 +136,9 @@ nnoremap <silent><Leader>jad :Rg!<CR>
 nnoremap <silent><Leader>jh :History<CR>
 nnoremap <silent><Leader>jb :Buffers<CR>
 
-" Mappings for Signify
-nnoremap <silent><leader>gd :SignifyDiff<CR>
-nnoremap <silent><leader>gp :SignifyHunkDiff<CR>
-nnoremap <silent><leader>gu :SignifyHunkUndo<CR>
+" Mappings for vim-gitgutter
+nnoremap <silent><leader>gp :GitGutterPreviewHunk<CR>
+nnoremap <silent><leader>gu :GitGutterUndoHunk<CR>
 
 " Mappings for copilot.vim
 inoremap <C-]> <Plug>(copilot-next)
@@ -149,10 +148,6 @@ inoremap <C-\> <Plug>(copilot-suggest)
 " fzf.vim settings
 let g:fzf_layout = { 'down': '12' }
 let g:fzf_preview_window = ['right:50%:hidden', 'ctrl-/']
-
-" Signify settings
-let g:signify_sign_change = '~'
-let g:signify_sign_show_count = 0
 
 " ALE settings
 let g:ale_virtualtext_cursor = 'disabled'
@@ -185,7 +180,7 @@ Plug 'hugovandevliert/vim-life'
 Plug 'hugovandevliert/vim-solarized-flat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'

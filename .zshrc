@@ -20,6 +20,10 @@ alias cat="bat"
 # Prevent some regularly used commands from being added to ~/.zsh_history
 HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
 
+# Increase history size
+HISTSIZE=100000
+SAVEHIST=100000
+
 # Custom aliases
 alias dot="cd ~/dev/dotfiles"
 alias gbd="git branch -D"

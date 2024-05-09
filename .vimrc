@@ -64,6 +64,8 @@ autocmd FileType css,less,scss setlocal iskeyword+=-
 command! W :w
 command! Wa :wa
 command! Wq :wq
+command! Wqa :wqa
+command! WQ :wq
 command! Q :q
 command! Qa :qa
 

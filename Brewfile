@@ -1,6 +1,4 @@
 tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
 
 brew 'asdf'
 brew 'bat'
@@ -16,4 +14,4 @@ brew 'yarn'
 cask 'firefox'
 cask 'font-jetbrains-mono'
 cask 'google-chrome'
-cask 'iterm2-beta'
+cask 'iterm2@beta'

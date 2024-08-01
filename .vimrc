@@ -126,6 +126,9 @@ nnoremap <expr><silent><leader>tc &cc ? ':set cc&<CR>' : ':set cc=80<CR>'
 " Toggle wrap
 nnoremap <silent><leader>tw :set wrap!<CR>
 
+" Toggle ALE
+nnoremap <leader>ta :ALEToggle<CR>
+
 " Mappings for ALE
 nnoremap <silent>]a :ALENextWrap<CR>
 nnoremap <silent>[a :ALEPreviousWrap<CR>

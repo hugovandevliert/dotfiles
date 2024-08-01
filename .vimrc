@@ -111,6 +111,9 @@ nnoremap <space> <nop>
 " Copy relative path of current buffer to system clipboard
 nnoremap <silent><leader>cf :let @+=expand('%:.') \| :ec 'Copied path to clipboard.'<CR>
 
+" Sort in visual mode
+xnoremap <silent><leader>s :sort<CR>
+
 " Toggle spell
 nnoremap <silent><leader>ts :set spell!<CR>
 

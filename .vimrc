@@ -177,6 +177,7 @@ let g:ale_fixers = {
 \  'scss': ['prettier'],
 \  'json': ['jq']
 \}
+let g:ale_linters_ignore = ['brakeman'] " Brakeman can be very slow.
 
 " vim-ruby settings
 let g:ruby_indent_assignment_style = 'variable'

@@ -163,6 +163,7 @@ let g:signify_sign_add = '┃'
 let g:signify_sign_delete = '┃'
 let g:signify_sign_change = '┃'
 let g:signify_sign_show_count = 0
+let g:signify_skip = { 'vcs': { 'allow': ['git'] } }
 
 " ALE settings
 let g:ale_virtualtext_cursor = 'disabled'

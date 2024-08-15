@@ -24,6 +24,9 @@ HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
 HISTSIZE=100000
 SAVEHIST=100000
 
+# Use human readable sizes
+alias df="df -h"
+
 # Custom aliases
 alias dot="cd ~/dev/dotfiles"
 alias gbd="git branch -D"

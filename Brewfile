@@ -1,6 +1,6 @@
 tap 'homebrew/bundle'
 
-brew 'asdf'
+brew 'mise'
 brew 'bat'
 brew 'fzf'
 brew 'git'

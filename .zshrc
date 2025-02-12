@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="simple"
 
-plugins=(asdf git)
+plugins=(git mise)
 
 source $ZSH/oh-my-zsh.sh
 

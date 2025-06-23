@@ -1,6 +1,4 @@
 -- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -9,11 +7,15 @@ vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 
 -- Make line numbers default
 vim.o.number = true
+
+-- Scroll left/right one character at a time
+vim.o.sidescroll = 1
+
+-- Keep a few characters visible to the left and right of the cursor
+vim.o.sidescrolloff = 4
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -34,6 +36,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.o.undodir = '~/.config/nvim/undo'
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -44,8 +47,6 @@ vim.o.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-
--- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
 -- Configure how new splits should be opened
@@ -77,6 +78,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Enable spell checking for English and Dutch
+vim.o.spell = true
+vim.o.spelllang = 'en,nl'
+
 -- Disable wrap by default
 vim.o.wrap = false
 
@@ -84,9 +89,7 @@ vim.o.wrap = false
 --  See `:help vim.keymap.set()`
 
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[w]rite'})
-vim.keymap.set('n', '<leader>wa', '<cmd>wa<cr>', { desc = '[w]rite [a]ll'})
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', { desc = '[q]uit'})
-vim.keymap.set('n', '<leader>qa', '<cmd>confirm qa<cr>', { desc = '[q]uit [a]ll'})
 
 -- Sane movement when wrap is enabled
 vim.keymap.set('n', 'j', 'gj')

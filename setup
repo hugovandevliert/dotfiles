@@ -53,12 +53,12 @@ echo "Configuring ssh..."
 mkdir -p "$HOME/.ssh"
 ln -sfn "$PWD/.ssh/config" "$HOME/.ssh/config"
 
-echo "Configuring daemon that remaps Caps Lock to Escape..."
+echo "Configuring launch agent that remaps Caps Lock to Escape..."
 mkdir -p ~/Library/LaunchAgents
 cp "$PWD/escape-map.plist" ~/Library/LaunchAgents/custom.escape-map.plist
 launchctl load -w ~/Library/LaunchAgents/custom.escape-map.plist
 
-echo "Configuring daemon that preloads ssh keys from keychain..."
+echo "Configuring launch agent that preloads ssh keys from keychain..."
 cp "$PWD/ssh-add.plist" ~/Library/LaunchAgents/custom.ssh-add.plist
 launchctl load -w ~/Library/LaunchAgents/custom.ssh-add.plist
 

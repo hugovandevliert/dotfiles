@@ -13,5 +13,9 @@
     <true/>
     <key>KeepAlive</key>
     <false/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/ssh-add.out</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/ssh-add.out</string>
   </dict>
 </plist>

@@ -15,5 +15,9 @@
     <true/>
     <key>KeepAlive</key>
     <false/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/escape-map.out</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/escape-map.out</string>
   </dict>
 </plist>

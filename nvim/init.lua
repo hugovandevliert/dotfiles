@@ -88,8 +88,8 @@ vim.o.wrap = false
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
-vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[w]rite'})
-vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', { desc = '[q]uit'})
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite'})
+vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', { desc = '[Q]uit'})
 
 -- Sane movement when wrap is enabled
 vim.keymap.set('n', 'j', 'gj')
@@ -124,10 +124,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>cf', function()
   vim.fn.setreg('+', vim.fn.expand('%:.'))
   vim.cmd('echo "copied path to clipboard."')
-end, { desc = '[c]opy relative [f]ile path to clipboard', silent = true })
+end, { desc = '[C]opy relative [f]ile path to clipboard', silent = true })
 
 -- Toggle spell check
-vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>', { desc = '[t]oggle [s]pell check', silent = true })
+vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]pell check', silent = true })
 
 -- Toggle colorcolumn
 vim.keymap.set('n', '<leader>tc', function()
@@ -136,23 +136,13 @@ vim.keymap.set('n', '<leader>tc', function()
   else
     vim.opt.colorcolumn = '80'
   end
-end, { desc = '[t]oggle [c]olorcolumn', silent = true })
+end, { desc = '[T]oggle [c]olorcolumn', silent = true })
 
 -- Toggle line wrap
-vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[t]oggle line [w]rap', silent = true })
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle line [w]rap', silent = true })
 
--- Open current directory (like vim-vinegar)
-vim.keymap.set('n', '-', function()
-  local current_file = vim.fn.expand('%')
-  if current_file == '' or current_file:match('^term://') then
-    vim.cmd('silent keepalt edit .')
-  else
-    vim.cmd('silent keepalt edit %:h')
-    local fname = vim.fn.fnamemodify(current_file, ':t')
-    local pattern = string.format('^%s/?\\(\\s\\{2,}\\|\\s-->\\|$\\)', vim.fn.escape(fname, '\\'))
-    vim.fn.search(pattern, 'c')
-  end
-end, { silent = true })
+-- Toggle listchars
+vim.keymap.set('n', '<leader>tl', ':set list!<CR>', { desc = '[T]oggle [l]ist chars', silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -290,10 +280,10 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[c]opy' },
-        { '<leader>s', group = '[s]earch' },
-        { '<leader>t', group = '[t]oggle' },
-        { '<leader>h', group = 'git [h]unk', mode = { 'n', 'v' } },
+        { '<leader>c', group = '[C]opy' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [h]unk', mode = { 'n', 'v' } },
       },
     },
   },
@@ -315,26 +305,26 @@ require('lazy').setup({
       }
 
       -- Key mappings
-      vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = '[s]earch [h]elp' })
-      vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = '[s]earch [k]eymaps' })
+      vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = '[S]earch [h]elp' })
+      vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = '[S]earch [k]eymaps' })
       -- NOTE: In the old vim setup, we default to git_files instead of files here, for performance reasons. Let's revert to that if this turns out to be too slow.
-      vim.keymap.set('n', '<leader>sf', fzf.files, { desc = '[s]earch [f]iles' })
-      vim.keymap.set('n', '<leader>sm', function() fzf.git_files({ cmd = 'git ls-files --modified' }) end, { desc = '[s]earch [m]odified files' })
-      vim.keymap.set('n', '<leader>ss', fzf.builtin, { desc = '[s]earch [s]elect FZF-Lua' })
-      vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = '[s]earch current [w]ord' })
-      vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = '[s]earch by [g]rep' })
-      vim.keymap.set('n', '<leader>sd', fzf.diagnostics_document, { desc = '[s]earch [d]ocument diagnostics' })
-      vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = '[s]earch [r]esume' })
-      vim.keymap.set('n', '<leader>sy', fzf.oldfiles, { desc = '[s]earch histor[y]' })
-      vim.keymap.set('n', '<leader>sb', fzf.buffers, { desc = '[ ] [s]earch existing buffers' })
+      vim.keymap.set('n', '<leader>sf', fzf.files, { desc = '[S]earch [f]iles' })
+      vim.keymap.set('n', '<leader>sm', function() fzf.git_files({ cmd = 'git ls-files --modified' }) end, { desc = '[S]earch [m]odified files' })
+      vim.keymap.set('n', '<leader>ss', fzf.builtin, { desc = '[S]earch [s]elect FZF-Lua' })
+      vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = '[S]earch current [w]ord' })
+      vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = '[S]earch by [g]rep' })
+      vim.keymap.set('n', '<leader>sd', fzf.diagnostics_document, { desc = '[S]earch [d]ocument diagnostics' })
+      vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = '[S]earch [r]esume' })
+      vim.keymap.set('n', '<leader>sy', fzf.oldfiles, { desc = '[S]earch histor[y]' })
+      vim.keymap.set('n', '<leader><leader>', fzf.buffers, { desc = '[ ] Search existing buffers' })
       vim.keymap.set('n', '<leader>/', fzf.blines, { desc = '[/] Fuzzily search in current buffer' })
       vim.keymap.set('n', '<leader>s/', function()
         fzf.live_grep { grep_opts = '--no-ignore --hidden --exclude ".git"' }
-      end, { desc = '[s]earch [/] in Open Files' })
+      end, { desc = '[S]earch [/] in Open Files' })
 
       vim.keymap.set('n', '<leader>sn', function()
         fzf.files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[s]earch [n]eovim files' })
+      end, { desc = '[S]earch [n]eovim files' })
     end,
   },
 
@@ -412,36 +402,36 @@ require('lazy').setup({
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+          map('gra', vim.lsp.buf.code_action, '[G]oto code [a]ction', { 'n', 'x' })
 
           -- Find references for the word under your cursor.
-          map('grr', fzf_lua.lsp_references, '[G]oto [R]eferences')
+          map('grr', fzf_lua.lsp_references, '[G]oto [r]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gri', fzf_lua.lsp_implementations, '[G]oto [I]mplementation')
+          map('gri', fzf_lua.lsp_implementations, '[G]oto [i]mplementation')
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('grd', fzf_lua.lsp_definitions, '[G]oto [D]efinition')
+          map('grd', fzf_lua.lsp_definitions, '[G]oto [d]efinition')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
-          map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('grD', vim.lsp.buf.declaration, '[G]oto [d]eclaration')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('gO', fzf_lua.lsp_document_symbols, 'Open Document Symbols')
+          map('gO', fzf_lua.lsp_document_symbols, 'Open document symbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('gW', fzf_lua.lsp_workspace_symbols, 'Open Workspace Symbols')
+          map('gW', fzf_lua.lsp_workspace_symbols, 'Open workspace symbols')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('grt', fzf_lua.lsp_typedefs, '[G]oto [T]ype Definition')
+          map('grt', fzf_lua.lsp_typedefs, '[G]oto [t]ype definition')
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
@@ -560,7 +550,7 @@ require('lazy').setup({
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
-        desc = '[f]ormat buffer',
+        desc = '[F]ormat buffer',
       },
     },
     opts = {

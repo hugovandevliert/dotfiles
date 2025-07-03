@@ -5,11 +5,11 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
--- [[ Setting options ]]
--- See `:help vim.o`
-
 -- Make line numbers default
 vim.o.number = true
+
+-- Minimal number of screen lines to keep above and below the cursor
+vim.o.scrolloff = 4
 
 -- Scroll left/right one character at a time
 vim.o.sidescroll = 1
@@ -17,15 +17,11 @@ vim.o.sidescroll = 1
 -- Keep a few characters visible to the left and right of the cursor
 vim.o.sidescrolloff = 4
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.o.mouse = 'a'
-
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
@@ -33,6 +29,9 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+
+-- Disable swap files
+vim.o.swapfile = false
 
 -- Save undo history
 vim.o.undofile = true
@@ -46,32 +45,28 @@ vim.o.smartcase = true
 vim.o.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.updatetime = 200
+vim.o.timeoutlen = 200
 
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
---
---  Notice listchars is set using `vim.opt` instead of `vim.o`.
---  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
---   See `:help lua-options`
---   and `:help lua-options-guide`
+-- Display certain whitespace characters
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Use two spaces for a tab
+vim.o.smarttab = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -84,6 +79,15 @@ vim.o.spelllang = 'en,nl'
 
 -- Disable wrap by default
 vim.o.wrap = false
+
+-- Delete comment character when joining commented lines
+vim.opt.formatoptions:append('j')
+
+-- Don't include newline characters in visual mode
+vim.o.selection = 'old'
+
+-- Allow virtual editing in block mode
+vim.o.virtualedit = 'block'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -102,6 +106,14 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Indent without losing selection
 vim.keymap.set('x', '<', '<gv')
 vim.keymap.set('x', '>', '>gv')
+
+-- Paste without adding to the register in visual mode
+vim.keymap.set('x', 'p', function()
+  return 'pgv"' .. vim.v.register .. 'y`>'
+end, { expr = true })
+vim.keymap.set('x', 'P', function()
+  return 'Pgv"' .. vim.v.register .. 'y`>'
+end, { expr = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -131,12 +143,8 @@ vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]p
 
 -- Toggle colorcolumn
 vim.keymap.set('n', '<leader>tc', function()
-  if vim.opt.colorcolumn:get()[1] ~= '' then
-    vim.opt.colorcolumn = ''
-  else
-    vim.opt.colorcolumn = '80'
-  end
-end, { desc = '[T]oggle [c]olorcolumn', silent = true })
+  vim.opt.colorcolumn = vim.opt.colorcolumn:get()[1] == '80' and '' or '80'
+end, { desc = '[T]oggle [c]olorcolumn at 80', silent = true })
 
 -- Toggle line wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle line [w]rap', silent = true })

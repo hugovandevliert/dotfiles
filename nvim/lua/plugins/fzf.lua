@@ -24,7 +24,7 @@ return {
     vim.keymap.set('n', '<leader>sm', function() fzf.git_files({ cmd = 'git ls-files --modified' }) end, { desc = '[S]earch [m]odified files' })
     vim.keymap.set('n', '<leader>ss', fzf.builtin, { desc = '[S]earch [s]elect FZF-Lua' })
     vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = '[S]earch current [w]ord' })
-    vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = '[S]earch by [g]rep' })
+    vim.keymap.set('n', '<leader>sg', fzf.live_grep_native, { desc = '[S]earch by [g]rep' })
     vim.keymap.set('n', '<leader>sd', fzf.diagnostics_document, { desc = '[S]earch [d]ocument diagnostics' })
     vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = '[S]earch [r]esume' })
     vim.keymap.set('n', '<leader>sy', fzf.oldfiles, { desc = '[S]earch histor[y]' })

@@ -17,6 +17,10 @@ export FZF_DEFAULT_OPTS="--no-mouse --color=fg+:#fdf6e3,bg+:#5d6d6f,pointer:#fdf
 export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo 'Solarized (dark)' || echo 'Solarized (light)')"
 alias cat="bat"
 
+# Homebrew settings
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
+export HOMEBREW_NO_ENV_HINTS=YES
+
 # Prevent some regularly used commands from being added to ~/.zsh_history
 HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
 

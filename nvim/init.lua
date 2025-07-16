@@ -130,24 +130,24 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Copy relative path to system clipboard
-vim.keymap.set('n', '<leader>cf', function()
+vim.keymap.set('n', '<leader>p', function()
   vim.fn.setreg('+', vim.fn.expand('%:.'))
-  vim.cmd('echo "copied path to clipboard."')
-end, { desc = '[C]opy relative [f]ile path to clipboard', silent = true })
+  vim.cmd('echo "Copied file path to clipboard."')
+end, { desc = 'Copy relative file [p]ath to clipboard', silent = true })
 
 -- Toggle spell check
-vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]pell check', silent = true })
+vim.keymap.set('n', '<leader>cs', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]pell check', silent = true })
 
 -- Toggle colorcolumn
-vim.keymap.set('n', '<leader>tc', function()
+vim.keymap.set('n', '<leader>cc', function()
   vim.opt.colorcolumn = vim.opt.colorcolumn:get()[1] == '80' and '' or '80'
-end, { desc = '[T]oggle [c]olorcolumn at 80', silent = true })
+end, { desc = '[C]hange [c]olorcolumn', silent = true })
 
 -- Toggle line wrap
-vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle line [w]rap', silent = true })
+vim.keymap.set('n', '<leader>cw', '<cmd>set wrap!<CR>', { desc = '[C]hange line [w]rap', silent = true })
 
 -- Toggle listchars
-vim.keymap.set('n', '<leader>tl', ':set list!<CR>', { desc = '[T]oggle [l]ist chars', silent = true })
+vim.keymap.set('n', '<leader>cl', ':set list!<CR>', { desc = '[C]hange [l]ist chars', silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -167,6 +167,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('VimResized', {
   callback = function()
     vim.cmd('wincmd =')
+  end,
+})
+
+-- Disable spell checking in terminal windows
+vim.api.nvim_create_autocmd('TermOpen', {
+  callback = function()
+    vim.opt_local.spell = false
   end,
 })
 

@@ -8,7 +8,7 @@ brew 'git-delta'
 brew 'htop'
 brew 'node'
 brew 'ripgrep'
-brew 'vim'
+brew 'neovim'
 brew 'yarn'
 
 cask 'firefox'

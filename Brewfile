@@ -12,6 +12,6 @@ brew 'vim'
 brew 'yarn'
 
 cask 'firefox'
-cask 'font-jetbrains-mono'
+cask 'font-jetbrains-mono-nerd-font'
 cask 'google-chrome'
 cask 'iterm2@beta'

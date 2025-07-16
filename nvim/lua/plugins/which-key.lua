@@ -8,9 +8,9 @@ return {
 
     -- Document existing key chains
     spec = {
-      { '<leader>c', group = '[C]opy' },
+      { '<leader>c', group = '[C]hange' },
       { '<leader>s', group = '[S]earch' },
-      { '<leader>t', group = '[T]oggle' },
+      { '<leader>t', group = '[T]est' },
       { '<leader>h', group = 'Git [h]unk', mode = { 'n', 'v' } },
     },
   },

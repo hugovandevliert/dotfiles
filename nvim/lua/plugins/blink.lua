@@ -64,6 +64,7 @@ return {
     fuzzy = { implementation = 'lua' },
 
     -- Shows a signature help window while you type arguments for a function
-    signature = { enabled = true },
+    -- NOTE: Disabled for now since it conflicts with copilot's <C-k> mapping
+    -- signature = { enabled = true },
   },
 }

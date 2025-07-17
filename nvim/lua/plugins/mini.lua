@@ -24,18 +24,10 @@ return  {
       search_method = 'cover_or_next',
     })
 
-    --  You could remove this setup call if you don't like it,
-    --  and try some other statusline plugin
+    -- Statusline
     local statusline = require 'mini.statusline'
     statusline.setup { use_icons = true }
-
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we set the section for
-    -- cursor location to LINE:COLUMN
-    ---@diagnostic disable-next-line: duplicate-set-field
-    statusline.section_location = function()
-      return '%2l:%-2v'
-    end
+    statusline.section_git = function() return '' end
 
     -- Split and join arguments with gS
     require('mini.splitjoin').setup()

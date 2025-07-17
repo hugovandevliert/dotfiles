@@ -19,10 +19,11 @@ return {
     -- Key mappings
     vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = '[S]earch [h]elp' })
     vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = '[S]earch [k]eymaps' })
-    -- NOTE: In the old vim setup, we default to git_files instead of files here, for performance reasons. Let's revert to that if this turns out to be too slow.
+    -- NOTE: In the old vim setup, we default to git_files instead of files here, for performance reasons.
+    -- Let's revert to that if this turns out to be too slow.
     vim.keymap.set('n', '<leader>sf', fzf.files, { desc = '[S]earch [f]iles' })
-    vim.keymap.set('n', '<leader>sm', function() fzf.git_files({ cmd = 'git ls-files --modified' }) end, { desc = '[S]earch [m]odified files' })
-    vim.keymap.set('n', '<leader>ss', fzf.builtin, { desc = '[S]earch [s]elect FZF-Lua' })
+    vim.keymap.set('n', '<leader>ss', fzf.git_status, { desc = '[S]earch git [s]tatus' })
+    vim.keymap.set('n', '<leader>sb', fzf.builtin, { desc = '[S]earch [b]uiltin FZF-Lua' })
     vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = '[S]earch current [w]ord' })
     vim.keymap.set('n', '<leader>sg', fzf.live_grep_native, { desc = '[S]earch by [g]rep' })
     vim.keymap.set('n', '<leader>sd', fzf.diagnostics_document, { desc = '[S]earch [d]ocument diagnostics' })

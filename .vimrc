@@ -51,6 +51,9 @@ autocmd VimResized * wincmd =
 autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
+" Disable spell checking, line numbers and the sign column in terminal windows
+autocmd TerminalWinOpen * setlocal nospell nonumber signcolumn=no
+
 " Hide statusline when in fzf windows
 autocmd FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
 
@@ -130,8 +133,9 @@ nnoremap <silent><leader>tw :set wrap!<CR>
 nnoremap <leader>ta :ALEToggle<CR>
 
 " Mappings for ALE
-nnoremap <silent>]a :ALENextWrap<CR>
-nnoremap <silent>[a :ALEPreviousWrap<CR>
+nnoremap <silent>]e :ALENextWrap<CR>
+nnoremap <silent>[e :ALEPreviousWrap<CR>
+nnoremap <silent><leader>jr :ALEFindReferences -relative<CR>
 nnoremap <silent><leader>js :ALEGoToDefinition<CR>
 nnoremap <silent><leader>jst :ALEGoToTypeDefinition<CR>
 

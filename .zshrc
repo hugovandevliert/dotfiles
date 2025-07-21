@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="simple"
 
-plugins=(brew git mise)
+plugins=(brew git gpg-agent mise)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -40,10 +40,8 @@ echo "Configuring iTerm..."
 mkdir -p "$HOME/.iterm2"
 ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode.iterm2.plist"
 
-echo "Configuring vim..."
-cp -R "$PWD/.vim/" "$HOME/.vim"
-ln -sfn "$PWD/.vimrc" "$HOME/.vimrc"
-vim -Esu "$HOME/.vimrc" +PlugInstall +qall
+echo "Configuring neovim..."
+ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
 
 echo "Configuring ssh..."
 mkdir -p "$HOME/.ssh"

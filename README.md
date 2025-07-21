@@ -35,4 +35,4 @@ Not everything can be automated.
   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
   ```
 * Download vim wordlists by running `set spell` in vim.
-* Install any desired [asdf plugins](https://asdf-vm.com/guide/getting-started.html#_4-install-a-plugin).
+* Install any desired [mise plugins](https://mise.jdx.dev/plugin-usage.html).

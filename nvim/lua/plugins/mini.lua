@@ -1,0 +1,35 @@
+-- Collection of various small independent plugins/modules
+-- https://github.com/echasnovski/mini.nvim
+
+return  {
+  'echasnovski/mini.nvim',
+  config = function()
+    -- Add/delete/replace surroundings (brackets, quotes, etc.)
+    require('mini.surround').setup({
+      custom_surroundings = {
+        ['('] = { output = { left = '( ', right = ' )' } },
+        ['['] = { output = { left = '[ ', right = ' ]' } },
+        ['{'] = { output = { left = '{ ', right = ' }' } },
+        ['<'] = { output = { left = '< ', right = ' >' } },
+      },
+      mappings = {
+        add = 'ys',
+        delete = 'ds',
+        find = '',
+        find_left = '',
+        highlight = '',
+        replace = 'cs',
+        update_n_lines = '',
+      },
+      search_method = 'cover_or_next',
+    })
+
+    -- Statusline
+    local statusline = require 'mini.statusline'
+    statusline.setup { use_icons = true }
+    statusline.section_git = function() return '' end
+
+    -- Split and join arguments with gS
+    require('mini.splitjoin').setup()
+  end,
+}

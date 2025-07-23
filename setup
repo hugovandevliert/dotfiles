@@ -15,10 +15,9 @@ sh .macos
 
 echo "Configuring git..."
 git config --global commit.gpgsign true
-git config --global core.editor vim
+git config --global core.editor nvim
 git config --global core.ignorecase false
 git config --global gpg.format ssh
-git config --global merge.tool vimdiff
 git config --global pull.rebase true
 git config --global fetch.prune true
 git config --global init.defaultBranch master

@@ -6,7 +6,7 @@ plugins=(brew git gpg-agent mise)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export LANG="en_US.UTF-8"
 
 # FZF settings
@@ -27,6 +27,8 @@ HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
 # Increase history size
 HISTSIZE=100000
 SAVEHIST=100000
+
+alias vi="nvim"
 
 # Use human readable sizes
 alias df="df -h"

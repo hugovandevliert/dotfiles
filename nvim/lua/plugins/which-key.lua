@@ -11,7 +11,7 @@ return {
       { '<leader>c', group = '[C]hange' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>t', group = '[T]est' },
-      { '<leader>h', group = 'Git [h]unk', mode = { 'n', 'v' } },
+      { '<leader>g', group = '[G]it', mode = { 'n', 'v' } },
     },
   },
 }

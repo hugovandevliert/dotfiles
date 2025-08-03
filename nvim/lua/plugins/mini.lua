@@ -5,24 +5,7 @@ return  {
   'echasnovski/mini.nvim',
   config = function()
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
-    require('mini.surround').setup({
-      custom_surroundings = {
-        ['('] = { output = { left = '( ', right = ' )' } },
-        ['['] = { output = { left = '[ ', right = ' ]' } },
-        ['{'] = { output = { left = '{ ', right = ' }' } },
-        ['<'] = { output = { left = '< ', right = ' >' } },
-      },
-      mappings = {
-        add = 'ys',
-        delete = 'ds',
-        find = '',
-        find_left = '',
-        highlight = '',
-        replace = 'cs',
-        update_n_lines = '',
-      },
-      search_method = 'cover_or_next',
-    })
+    require('mini.surround').setup()
 
     -- Statusline
     local statusline = require 'mini.statusline'

@@ -27,6 +27,9 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Assume the /g flag on :s substitutions
+vim.o.gdefault = true
+
 -- Disable swap files
 vim.o.swapfile = false
 

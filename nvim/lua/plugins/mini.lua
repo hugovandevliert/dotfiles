@@ -12,7 +12,9 @@ return  {
     statusline.setup { use_icons = true }
     statusline.section_git = function() return '' end
 
-    -- Split and join arguments with gS
-    require('mini.splitjoin').setup()
+    -- Split and join arguments with gJ
+    require('mini.splitjoin').setup({
+      mappings = { toggle = 'gJ' },
+    })
   end,
 }

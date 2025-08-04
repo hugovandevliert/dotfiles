@@ -94,6 +94,7 @@ vim.o.virtualedit = 'block'
 
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite'})
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', { desc = '[Q]uit'})
+vim.keymap.set('n', '<leader>x', '<cmd>x<cr>', { desc = '[X] Write and quit'})
 
 -- Sane movement when wrap is enabled
 vim.keymap.set('n', 'j', 'gj')

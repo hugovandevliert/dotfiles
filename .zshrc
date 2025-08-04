@@ -14,6 +14,9 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
 export FZF_DEFAULT_OPTS="--no-mouse --color=fg+:#fdf6e3,bg+:#5d6d6f,pointer:#fdf6e3,marker:#859900,gutter:-1,prompt:-1"
 
 # BAT settings
+# These should start working on the next version of bat (see: https://github.com/sharkdp/bat/pull/3168)
+# export BAT_THEME_LIGHT="Solarized (light)"
+# export BAT_THEME_DARK="Solarized (dark)"
 export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo 'Solarized (dark)' || echo 'Solarized (light)')"
 alias cat="bat"
 
@@ -22,7 +25,7 @@ export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
 export HOMEBREW_NO_ENV_HINTS=YES
 
 # Prevent some regularly used commands from being added to ~/.zsh_history
-HISTORY_IGNORE="(dot|ls|vim|fg|gs|gd|gl|gf|gds|gc|gca)"
+HISTORY_IGNORE="(clear|dot|ls|vi|vim|fg|gs|gd|gl|gf|gds|gc|gaa|gca)"
 
 # Increase history size
 HISTSIZE=100000

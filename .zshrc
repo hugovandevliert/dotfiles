@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR="nvim"
 export LANG="en_US.UTF-8"
+export MANPAGER='nvim +Man!'
 
 # FZF settings
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'

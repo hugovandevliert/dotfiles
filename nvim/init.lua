@@ -89,6 +89,12 @@ vim.o.selection = 'old'
 -- Allow virtual editing in block mode
 vim.o.virtualedit = 'block'
 
+-- Configure folding with Treesitter
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldtext = ''
+vim.o.foldlevel = 99
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 

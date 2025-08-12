@@ -40,6 +40,15 @@ vim.keymap.set('n', '<leader>p', function()
   vim.cmd('echo "Copied file path to clipboard."')
 end, { desc = 'Copy relative file [p]ath to clipboard', silent = true })
 
+-- Jump to the next or previous diagnostic
+vim.keymap.set('n', ']g', function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end)
+vim.keymap.set('n', '[g', function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end)
+
+-- [[ Toggles ]]
 -- Toggle spell check
 vim.keymap.set('n', '<leader>cs', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]pell check', silent = true })
 

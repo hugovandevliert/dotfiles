@@ -1,4 +1,4 @@
- -- https://github.com/Saghen/blink.cmp
+-- https://github.com/Saghen/blink.cmp
 
 return {
   'saghen/blink.cmp',
@@ -20,7 +20,7 @@ return {
           'rafamadriz/friendly-snippets',
           config = function()
             require('luasnip.loaders.from_vscode').lazy_load()
-            require('luasnip').filetype_extend('ruby', {'rails'})
+            require('luasnip').filetype_extend('ruby', { 'rails' })
           end,
         },
       },
@@ -44,7 +44,7 @@ return {
     sources = {
       default = { 'lsp', 'buffer', 'path', 'snippets', 'lazydev' },
       per_filetype = {
-         codecompanion = { 'codecompanion' },
+        codecompanion = { 'codecompanion' },
       },
       providers = {
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },

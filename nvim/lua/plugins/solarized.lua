@@ -8,6 +8,6 @@ return {
   'lifepillar/vim-solarized8',
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme 'solarized8_flat'
+    vim.cmd.colorscheme('solarized8_flat')
   end,
 }

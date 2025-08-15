@@ -1,4 +1,3 @@
--- Autoformat
 -- https://github.com/stevearc/conform.nvim
 
 return {
@@ -9,7 +8,7 @@ return {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require('conform').format({ async = true, lsp_format = 'fallback' })
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -20,11 +19,11 @@ return {
         -- If autoformat is currently disabled for this buffer,
         -- then enable it, otherwise disable it
         if vim.b.disable_autoformat then
-          vim.cmd 'FormatEnable'
-          vim.notify 'Enabled autoformat for current buffer'
+          vim.cmd('FormatEnable')
+          vim.notify('Enabled autoformat for current buffer')
         else
-          vim.cmd 'FormatDisable!'
-          vim.notify 'Disabled autoformat for current buffer'
+          vim.cmd('FormatDisable!')
+          vim.notify('Disabled autoformat for current buffer')
         end
       end,
       desc = '[C]hange auto[f]ormat for current buffer',
@@ -35,11 +34,11 @@ return {
         -- If autoformat is currently disabled globally,
         -- then enable it globally, otherwise disable it globally
         if vim.g.disable_autoformat then
-          vim.cmd 'FormatEnable'
-          vim.notify 'Enabled autoformat globally'
+          vim.cmd('FormatEnable')
+          vim.notify('Enabled autoformat globally')
         else
-          vim.cmd 'FormatDisable'
-          vim.notify 'Disabled autoformat globally'
+          vim.cmd('FormatDisable')
+          vim.notify('Disabled autoformat globally')
         end
       end,
       desc = '[C]hange auto[f]ormat globally',
@@ -69,6 +68,7 @@ return {
       javascript = { 'prettier' },
       javascriptreact = { 'prettier' },
       json = { 'jq' },
+      lua = { 'stylua' },
       ruby = { 'rubocop' },
       scss = { 'prettier' },
       typescript = { 'prettier' },

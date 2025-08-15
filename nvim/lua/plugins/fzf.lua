@@ -1,4 +1,3 @@
--- fzf
 -- https://github.com/ibhagwan/fzf-lua
 
 return {
@@ -9,12 +8,12 @@ return {
   },
   config = function()
     local fzf = require('fzf-lua')
-    fzf.setup {
+    fzf.setup({
       winopts = {
         preview = { layout = 'vertical' },
       },
       files = { git_icons = true },
-    }
+    })
 
     -- Key mappings
     vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = '[S]earch [h]elp' })
@@ -32,11 +31,11 @@ return {
     vim.keymap.set('n', '<leader><leader>', fzf.buffers, { desc = '[ ] Search existing buffers' })
     vim.keymap.set('n', '<leader>/', fzf.blines, { desc = '[/] Fuzzily search in current buffer' })
     vim.keymap.set('n', '<leader>s/', function()
-      fzf.live_grep { grep_opts = '--no-ignore --hidden --exclude ".git"' }
+      fzf.live_grep({ grep_opts = '--no-ignore --hidden --exclude ".git"' })
     end, { desc = '[S]earch [/] in Open Files' })
 
     vim.keymap.set('n', '<leader>sn', function()
-      fzf.files { cwd = vim.fn.stdpath 'config' }
+      fzf.files({ cwd = vim.fn.stdpath('config') })
     end, { desc = '[S]earch [n]eovim files' })
   end,
 }

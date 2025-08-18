@@ -41,12 +41,14 @@ vim.keymap.set('n', '<leader>p', function()
 end, { desc = 'Copy relative file [p]ath to clipboard', silent = true })
 
 -- Jump to the next or previous diagnostic
-vim.keymap.set('n', ']g', function()
+vim.keymap.set('n', ']d', function()
   vim.diagnostic.jump({ count = 1, float = true })
-end)
-vim.keymap.set('n', '[g', function()
+end, { desc = 'Jump to the next diagnostic' })
+vim.keymap.set('n', '[d', function()
   vim.diagnostic.jump({ count = -1, float = true })
-end)
+end, { desc = 'Jump to the previous diagnostic' })
+vim.keymap.del('n', ']D')
+vim.keymap.del('n', '[D')
 
 -- [[ Toggles ]]
 -- Toggle spell check

@@ -3,7 +3,7 @@
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle --no-lock >> /dev/null
+brew bundle >> /dev/null
 brew cleanup >> /dev/null
 
 echo "Installing ohmyzsh..."

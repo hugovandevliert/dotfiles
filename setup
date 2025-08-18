@@ -35,9 +35,8 @@ git config --global delta.blame-palette normal
 git config --global delta.blame-format "{commit:<8} {author:<15.15} {timestamp:<16}"
 git config --global delta.blame-timestamp-output-format "%F %R"
 
-echo "Configuring iTerm..."
-mkdir -p "$HOME/.iterm2"
-ln -sfn "$PWD/.iterm2/com.googlecode.iterm2.plist" "$HOME/.iterm2/com.googlecode.iterm2.plist"
+echo "Configuring ghostty..."
+ln -sfn "$PWD/config/ghostty" "$HOME/.config/ghostty"
 
 echo "Configuring neovim..."
 ln -sfn "$PWD/nvim" "$HOME/.config/nvim"

@@ -6,7 +6,7 @@ This repository contains configuration files for my development environment on M
 
 ## Setup
 
-First, ensure Apple's command line tools are installed:
+First, make sure Apple's command line tools are installed:
 ```
 xcode-select --install
 ```
@@ -34,5 +34,4 @@ Not everything can be automated.
   ```zsh
   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
   ```
-* Download vim wordlists by running `set spell` in vim.
-* Install any desired [mise plugins](https://mise.jdx.dev/plugin-usage.html).
+* Download wordlists by running `set spell` in `vim`

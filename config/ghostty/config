@@ -1,5 +1,7 @@
 auto-update = off
 
+clipboard-paste-protection = false
+
 cursor-style = block
 cursor-style-blink = false
 

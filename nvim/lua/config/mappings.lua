@@ -14,6 +14,9 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('x', '<', '<gv')
 vim.keymap.set('x', '>', '>gv')
 
+-- Sort selected lines
+vim.keymap.set('x', '<leader>s', ':sort<CR>', { silent = true })
+
 -- Paste without adding to the register in visual mode
 vim.keymap.set('x', 'p', function()
   return 'pgv"' .. vim.v.register .. 'y`>'

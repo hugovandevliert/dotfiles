@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Move windows by using ctl + cmd + mouse
 defaults write NSGlobalDomain NSWindowShouldDragOnGesture -bool true

@@ -1,0 +1,19 @@
+# https://ghostty.org/docs/config/reference
+
+auto-update = off
+
+clipboard-paste-protection = false
+
+cursor-style = block
+cursor-style-blink = false
+
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-size = 15
+
+macos-icon = xray
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+
+shell-integration-features = no-cursor
+
+theme = light:solarized-light,dark:solarized-dark

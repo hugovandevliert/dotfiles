@@ -36,7 +36,7 @@ git config --global delta.blame-format "{commit:<8} {author:<15.15} {timestamp:<
 git config --global delta.blame-timestamp-output-format "%F %R"
 
 echo "Configuring ghostty..."
-ln -sfn "$PWD/config/ghostty" "$HOME/.config/ghostty"
+ln -sfn "$PWD/.config/ghostty" "$HOME/.config/ghostty"
 
 echo "Configuring neovim..."
 ln -sfn "$PWD/nvim" "$HOME/.config/nvim"

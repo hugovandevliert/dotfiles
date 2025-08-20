@@ -1,3 +1,5 @@
+# https://ghostty.org/docs/config/reference
+
 auto-update = off
 
 clipboard-paste-protection = false

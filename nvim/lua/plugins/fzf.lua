@@ -13,13 +13,15 @@ return {
         preview = { layout = 'vertical' },
       },
       files = { git_icons = true },
+      grep = {
+        -- Allow hidden files, but exclude the .git directory from search results.
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case --max-columns=4096 --hidden -g "!*.git" -e',
+      },
     })
 
     -- Key mappings
     vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = '[S]earch [h]elp' })
     vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = '[S]earch [k]eymaps' })
-    -- NOTE: In the old vim setup, we default to git_files instead of files here, for performance reasons.
-    -- Let's revert to that if this turns out to be too slow.
     vim.keymap.set('n', '<leader>sf', fzf.files, { desc = '[S]earch [f]iles' })
     vim.keymap.set('n', '<leader>ss', fzf.git_status, { desc = '[S]earch git [s]tatus' })
     vim.keymap.set('n', '<leader>sb', fzf.builtin, { desc = '[S]earch [b]uiltin FZF-Lua' })

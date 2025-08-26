@@ -41,7 +41,7 @@ echo "Configuring ghostty..."
 ln -sfn "$PWD/.config/ghostty" "$HOME/.config/ghostty"
 
 echo "Configuring neovim..."
-ln -sfn "$PWD/nvim" "$HOME/.config/nvim"
+ln -sfn "$PWD/.config/nvim" "$HOME/.config/nvim"
 
 echo "Configuring ssh..."
 mkdir -p "$HOME/.ssh"

@@ -42,13 +42,6 @@ alias dot="cd ~/dev/dotfiles"
 alias gbd="git branch -D"
 alias gs="git status"
 
-# Get main branch name of the current repository (assumes it's either 'master' or 'main')
-function git_main_branch() {
-  if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
-    git branch | cut -c 3- | grep -E '^master$|^main$'
-  fi
-}
-
 # Open a Pull Request for the current branch against master/main on github.com
 function gopr() {
   if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then

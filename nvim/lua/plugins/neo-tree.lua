@@ -12,10 +12,12 @@ return {
   keys = {
     { '\\', ':Neotree reveal toggle<CR>', desc = 'NeoTree reveal', silent = true },
   },
+  ---@module "neo-tree"
+  ---@type neotree.Config?
   opts = {
     filesystem = {
       filtered_items = {
-        always_show_by_pattern = { '.env*' },
+        visible = true,
       },
       window = {
         mappings = {

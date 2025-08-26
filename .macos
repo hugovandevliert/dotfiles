@@ -72,6 +72,16 @@ defaults write com.apple.dock show-recents -bool false
 # Dock: remove all applications
 defaults write com.apple.dock persistent-apps -array
 
+# TextEdit: start in plain text mode
+defaults write com.apple.TextEdit RichText -int 0
+
+# Simulator: show clicks
+defaults write com.apple.iphonesimulator ShowSingleTouches 1
+
+# Safari has since been containerized. As a result below settings will only be
+# applied if "Full Disk Access" is granted to the terminal that runs this script.
+# See: https://github.com/mathiasbynens/dotfiles/issues/849
+#
 # Safari: enable develop menu
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 
@@ -80,9 +90,3 @@ defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 
 # Safari: show complete URL in the address bar
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-
-# TextEdit: start in plain text mode
-defaults write com.apple.TextEdit RichText -int 0
-
-# Simulator: show clicks
-defaults write com.apple.iphonesimulator ShowSingleTouches 1

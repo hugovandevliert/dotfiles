@@ -17,3 +17,7 @@ mouse-hide-while-typing = true
 shell-integration-features = no-cursor
 
 theme = light:solarized-light,dark:solarized-dark
+
+window-padding-color = extend
+
+window-title-font-family = JetBrainsMonoNL Nerd Font Mono

@@ -31,7 +31,6 @@ vim.o.swapfile = false
 
 -- Save undo history
 vim.o.undofile = true
-vim.o.undodir = vim.fs.normalize('~/.config/nvim/undo')
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true

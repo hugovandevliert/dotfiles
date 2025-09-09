@@ -24,6 +24,7 @@ return {
         'query',
         'ruby',
         'sql',
+        'swift',
         'typescript',
         'vim',
         'yaml',

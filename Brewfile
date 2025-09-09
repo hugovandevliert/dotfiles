@@ -9,6 +9,7 @@ brew 'neovim'
 brew 'node'
 brew 'ripgrep'
 brew 'stylua'
+brew 'tree-sitter-cli'
 brew 'yarn'
 
 cask 'firefox'

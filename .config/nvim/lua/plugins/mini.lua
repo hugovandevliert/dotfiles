@@ -1,8 +1,8 @@
 -- Collection of various small independent plugins/modules
--- https://github.com/echasnovski/mini.nvim
+-- https://github.com/nvim-mini/mini.nvim
 
 return {
-  'echasnovski/mini.nvim',
+  'nvim-mini/mini.nvim',
   config = function()
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     require('mini.surround').setup({

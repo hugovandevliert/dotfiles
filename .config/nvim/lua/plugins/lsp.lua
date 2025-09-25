@@ -145,6 +145,7 @@ return {
         rubocop = {},
         ruby_lsp = {},
         ts_ls = {},
+        tailwindcss = {},
       }
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()

@@ -55,7 +55,7 @@ vim.keymap.del('n', '[D')
 
 -- [[ Toggles ]]
 -- Toggle spell check
-vim.keymap.set('n', '<leader>cs', '<cmd>set spell!<CR>', { desc = '[T]oggle [s]pell check', silent = true })
+vim.keymap.set('n', '<leader>cs', '<cmd>set spell!<CR>', { desc = '[C]hange [s]pell check', silent = true })
 
 -- Toggle colorcolumn
 vim.keymap.set('n', '<leader>cc', function()

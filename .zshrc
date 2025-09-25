@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Nice themes: sunaku, sunrise, simple, kolo, gozilla, fletcherm, eastwood, dst
 ZSH_THEME="simple"
 
-plugins=(brew git gpg-agent mise)
+plugins=(brew fzf git gpg-agent mise)
 
 source $ZSH/oh-my-zsh.sh
 

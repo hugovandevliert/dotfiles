@@ -17,6 +17,7 @@ return {
         -- Allow hidden files, but exclude the .git directory from search results.
         rg_opts = '--column --line-number --no-heading --color=always --smart-case --max-columns=4096 --hidden -g "!*.git" -e',
       },
+      oldfiles = { include_current_session = true },
     })
 
     -- Key mappings

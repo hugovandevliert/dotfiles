@@ -12,6 +12,7 @@ return {
       ensure_installed = {
         'bash',
         'diff',
+        'embedded_template',
         'git_config',
         'git_rebase',
         'gitcommit',

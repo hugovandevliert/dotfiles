@@ -33,6 +33,7 @@ alias dot="cd ~/dev/dotfiles"
 alias gbd="git branch -D"
 alias gs="git status"
 alias vi="nvim"
+alias vim="nvim"
 
 # Open a Pull Request for the current branch against master/main on github.com
 function gopr() {

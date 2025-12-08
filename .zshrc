@@ -39,7 +39,7 @@ alias vim="nvim"
 function gopr() {
   if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
     github_url=`git ls-remote --get-url | sed -Ee "s#(git@|git://)#https://#" -e "s@com:@com/@" -e "s%\.git$%%"`
-    open $github_url"/compare/"$(git_main_branch)"..."$(git_current_branch)"?expand=1"
+    open $github_url"/pull/new/"$(git_current_branch)
   else
     echo "not in a git repository"
   fi

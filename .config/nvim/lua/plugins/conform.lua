@@ -65,6 +65,7 @@ return {
     formatters_by_ft = {
       ['_'] = { 'trim_newlines', 'trim_whitespace' },
       css = { 'prettier' },
+      eruby = { 'htmlbeautifier', 'erb_lint' },
       javascript = { 'prettier' },
       javascriptreact = { 'prettier' },
       json = { 'jq' },
@@ -73,6 +74,11 @@ return {
       scss = { 'prettier' },
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },
+    },
+    formatters = {
+      htmlbeautifier = {
+        args = { '--keep-blank-lines', '1' },
+      },
     },
   },
   config = function(_, opts)

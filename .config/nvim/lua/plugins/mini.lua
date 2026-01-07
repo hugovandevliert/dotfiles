@@ -26,6 +26,9 @@ return {
     vim.keymap.del('x', 'ys')
     vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
+    -- Enhanced text objects
+    require('mini.ai').setup()
+
     -- Statusline
     local statusline = require('mini.statusline')
     statusline.setup({ use_icons = true })

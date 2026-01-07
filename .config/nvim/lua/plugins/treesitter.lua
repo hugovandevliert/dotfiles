@@ -1,5 +1,4 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
--- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 -- https://github.com/RRethy/nvim-treesitter-endwise
 
 return {
@@ -40,18 +39,7 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'slim', 'ruby' } },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ['ab'] = '@block.outer',
-            ['ib'] = '@block.inner',
-          },
-        },
-      },
     },
   },
-  { 'nvim-treesitter/nvim-treesitter-textobjects' },
   { 'RRethy/nvim-treesitter-endwise' },
 }

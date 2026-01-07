@@ -1,5 +1,4 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
--- https://github.com/RRethy/nvim-treesitter-endwise
 
 return {
   {
@@ -41,5 +40,4 @@ return {
       indent = { enable = true, disable = { 'slim', 'ruby' } },
     },
   },
-  { 'RRethy/nvim-treesitter-endwise' },
 }

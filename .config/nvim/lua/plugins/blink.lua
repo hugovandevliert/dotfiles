@@ -31,7 +31,6 @@ return {
     },
 
     -- Shows a signature help window while you type arguments for a function
-    -- NOTE: Disabled for now since it conflicts with copilot's <C-k> mapping
-    -- signature = { enabled = true },
+    signature = { enabled = true },
   },
 }

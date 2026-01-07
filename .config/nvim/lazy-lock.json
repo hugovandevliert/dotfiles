@@ -3,7 +3,6 @@
   "codecompanion.nvim": { "branch": "main", "commit": "b6fcc25ced5628d3d960e6e4bc287ce8fc9a1710" },
   "clasp.nvim": { "branch": "master", "commit": "25442429aae1b1de0627f358740613f77ec57410" },
   "conform.nvim": { "branch": "master", "commit": "8314f4c9e205e7f30b62147069729f9a1227d8bf" },
-  "copilot.vim": { "branch": "release", "commit": "206011a8bc5078a02560d5c44177e9849e8f8d6c" },
   "fidget.nvim": { "branch": "main", "commit": "64463022a1f2ff1318ab22a2ea4125ed9313a483" },
   "fzf-lua": { "branch": "main", "commit": "a03d68e40eea835a1cdbd9f93049708dab3621e6" },
   "gitsigns.nvim": { "branch": "main", "commit": "dfac404ac94b0eb1461bd7da32279e16950dfd67" },

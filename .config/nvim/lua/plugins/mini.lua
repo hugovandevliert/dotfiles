@@ -31,8 +31,17 @@ return {
 
     -- Statusline
     local statusline = require('mini.statusline')
-    statusline.setup({ use_icons = true })
+    statusline.setup()
     statusline.section_git = function()
+      return ''
+    end
+    statusline.section_diff = function()
+      return ''
+    end
+    statusline.section_lsp = function()
+      return ''
+    end
+    statusline.section_searchcount = function()
       return ''
     end
 

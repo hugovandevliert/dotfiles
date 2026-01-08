@@ -23,7 +23,7 @@
   "vim-apathy": { "branch": "master", "commit": "27128a0f55189724c841843ba41cd33cf7186032" },
   "vim-rails": { "branch": "master", "commit": "b0a5c76f86ea214ade36ab0b811e730c3f0add67" },
   "vim-slim": { "branch": "master", "commit": "a0a57f75f20a03d5fa798484743e98f4af623926" },
-  "vim-solarized8": { "branch": "master", "commit": "19fd5a93162e1014e8ea8c0fedce26392e63f7ae" },
+  "vim-solarized8": { "branch": "neovim", "commit": "19fd5a93162e1014e8ea8c0fedce26392e63f7ae" },
   "vim-test": { "branch": "master", "commit": "aa619692ff48a3cf3e6bdb893765039488d4e5f3" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }

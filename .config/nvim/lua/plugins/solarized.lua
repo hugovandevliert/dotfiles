@@ -7,6 +7,7 @@
 return {
   'lifepillar/vim-solarized8',
   priority = 1000,
+  branch = 'neovim',
   config = function()
     vim.cmd.colorscheme('solarized8_flat')
   end,

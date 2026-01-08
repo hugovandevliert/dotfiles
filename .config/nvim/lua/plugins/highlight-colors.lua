@@ -7,7 +7,7 @@ return {
     { '<leader>cp', '<cmd>HighlightColors Toggle<cr>', desc = '[C]hange color [p]reviews' },
   },
   opts = {
-    render = 'foreground',
+    render = 'background',
     enable_tailwind = true,
   },
 }

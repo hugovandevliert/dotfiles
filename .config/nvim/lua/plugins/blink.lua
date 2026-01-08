@@ -22,9 +22,6 @@ return {
 
     sources = {
       default = { 'lsp', 'buffer', 'path', 'snippets', 'lazydev' },
-      per_filetype = {
-        codecompanion = { 'codecompanion' },
-      },
       providers = {
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
       },

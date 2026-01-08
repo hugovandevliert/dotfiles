@@ -1,3 +1,4 @@
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -6,9 +7,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     error('Error cloning lazy.nvim:\n' .. out)
   end
 end
+vim.opt.rtp:prepend(lazypath)
 
----@type vim.Option
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
+-- Set <space> as the leader key
+-- Has to be set before loading lazy
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-require('lazy').setup('plugins')
+require('lazy').setup('plugins', {
+  change_detection = { notify = false },
+  install = { missing = false },
+})

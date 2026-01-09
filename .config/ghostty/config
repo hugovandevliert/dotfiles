@@ -10,8 +10,6 @@ cursor-style-blink = false
 font-family = JetBrainsMonoNL Nerd Font Mono
 font-size = 15
 
-keybind = shift+enter=text:\x1b\r
-
 macos-titlebar-style = tabs
 mouse-hide-while-typing = true
 

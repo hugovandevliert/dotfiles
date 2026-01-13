@@ -1,4 +1,6 @@
 brew 'bat'
+brew 'claude'
+brew 'claude-code'
 brew 'fzf'
 brew 'git'
 brew 'git-delta'

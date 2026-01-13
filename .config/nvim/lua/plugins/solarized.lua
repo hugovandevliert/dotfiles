@@ -11,11 +11,14 @@ return {
   config = function()
     vim.cmd.colorscheme('solarized8_flat')
 
-    -- Hide cursor in terminal mode so it matches the regular cursor. This needs
-    -- to be done in an autocmd because of the reloading bug mentioned above.
+    -- These need to be in an autocmd because of the reloading bug linked above.
     vim.api.nvim_create_autocmd('ColorScheme', {
       callback = function()
+        -- Hide cursor in terminal mode so it matches the regular cursor.
         vim.api.nvim_set_hl(0, 'TermCursor', { blend = 100 })
+
+        -- Unlink @variable from Normal to prevent overriding the cursorline bg.
+        vim.api.nvim_set_hl(0, '@variable', {})
       end,
     })
   end,

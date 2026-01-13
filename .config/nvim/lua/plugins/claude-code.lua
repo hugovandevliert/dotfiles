@@ -13,6 +13,10 @@ return {
       toggle = {
         normal = '<C-\\>',
         terminal = '<C-\\>',
+        variants = {
+          continue = false,
+          verbose = false,
+        },
       },
     },
   },

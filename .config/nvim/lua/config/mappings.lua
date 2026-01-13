@@ -65,3 +65,8 @@ vim.keymap.set('n', '<leader>cw', '<cmd>set wrap!<CR>', { desc = '[C]hange line 
 
 -- Toggle listchars
 vim.keymap.set('n', '<leader>cl', ':set list!<CR>', { desc = '[C]hange [l]ist chars', silent = true })
+
+-- Toggle diagnostics
+vim.keymap.set('n', '<leader>cd', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = '[C]hange [d]iagnostics', silent = true })

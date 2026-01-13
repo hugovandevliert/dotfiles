@@ -6,9 +6,8 @@ return {
   version = '1.*',
   dependencies = {
     'folke/lazydev.nvim',
+    'rafamadriz/friendly-snippets',
   },
-  --- @module 'blink.cmp'
-  --- @type blink.cmp.Config
   opts = {
     keymap = { preset = 'default' },
 

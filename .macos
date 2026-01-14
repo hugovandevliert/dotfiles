@@ -63,6 +63,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Finder: disable the warning when emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
+# Dock: configure auto hide
+defaults write com.apple.dock autohide -bool true
+
 # Dock: set the icon size to 48 pixels
 defaults write com.apple.dock tilesize -int 48
 

@@ -1,5 +1,4 @@
 -- Highlight when yanking text
---  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   callback = function()
@@ -46,6 +45,17 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
       pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
+})
+
+-- Restore signcolumn and number when entering non-terminal buffers
+-- (fixes issue where opening files from a terminal buffer inherits its settings)
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    if vim.bo.buftype ~= 'terminal' then
+      vim.wo.signcolumn = 'yes'
+      vim.wo.number = true
     end
   end,
 })

@@ -27,6 +27,7 @@ return {
     vim.keymap.set('n', '<leader>ss', fzf.git_status, { desc = '[S]earch git [s]tatus' })
     vim.keymap.set('n', '<leader>sb', fzf.builtin, { desc = '[S]earch [b]uiltin FZF-Lua' })
     vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = '[S]earch current [w]ord' })
+    vim.keymap.set('v', '<leader>sw', fzf.grep_visual, { desc = '[S]earch current selection' })
     vim.keymap.set('n', '<leader>sg', fzf.live_grep_native, { desc = '[S]earch by [g]rep' })
     vim.keymap.set('n', '<leader>sd', fzf.diagnostics_document, { desc = '[S]earch [d]ocument diagnostics' })
     vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = '[S]earch [r]esume' })

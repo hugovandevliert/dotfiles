@@ -15,7 +15,7 @@ vim.keymap.set('x', '<', '<gv')
 vim.keymap.set('x', '>', '>gv')
 
 -- Sort selected lines
-vim.keymap.set('x', '<leader>s', ':sort<CR>', { silent = true })
+vim.keymap.set('x', 'gs', ':sort<CR>', { desc = 'Sort lines', silent = true })
 
 -- Paste without adding to the register in visual mode
 vim.keymap.set('x', 'p', function()

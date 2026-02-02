@@ -9,7 +9,7 @@ return {
     -- Document existing key chains
     spec = {
       { '<leader>c', group = '[C]hange' },
-      { '<leader>s', group = '[S]earch' },
+      { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
       { '<leader>t', group = '[T]est' },
       { '<leader>g', group = '[G]it', mode = { 'n', 'v' } },
       { 'gr', group = 'LSP' },

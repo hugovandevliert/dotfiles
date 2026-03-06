@@ -5,5 +5,9 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
   },
-  opts = {},
+  opts = {
+    aliases = {
+      eruby = 'html',
+    },
+  },
 }

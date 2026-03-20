@@ -98,7 +98,13 @@ return {
         eslint = {},
         lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
         rubocop = {},
-        ruby_lsp = {},
+        ruby_lsp = {
+          init_options = {
+            addonSettings = {
+              ['Ruby LSP Rails'] = { enablePendingMigrationsPrompt = false },
+            },
+          },
+        },
         ts_ls = {},
         tailwindcss = {},
       }

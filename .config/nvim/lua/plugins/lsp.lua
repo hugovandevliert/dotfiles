@@ -21,9 +21,6 @@ return {
     dependencies = {
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
-
-      -- Allows extra capabilities provided by blink.cmp
-      'saghen/blink.cmp',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -109,10 +106,7 @@ return {
         tailwindcss = {},
       }
 
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-
       for server, config in pairs(servers) do
-        config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
         vim.lsp.config(server, config)
         vim.lsp.enable(server)
       end

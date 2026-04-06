@@ -15,7 +15,8 @@ export FZF_DEFAULT_OPTS="--no-mouse --color=fg+:#fdf6e3,bg+:#5d6d6f,pointer:#fdf
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=14
 export HOMEBREW_NO_ENV_HINTS=YES
 
-# These should start working on the next version of bat (see: https://github.com/sharkdp/bat/pull/3168)
+# These should start working on the next version of bat (see: https://github.com/sharkdp/bat/pull/3168).
+# UPDATE: These work now, but delta does not support it yet: https://github.com/dandavison/delta/issues/1678.
 # export BAT_THEME_LIGHT="Solarized (light)"
 # export BAT_THEME_DARK="Solarized (dark)"
 export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo 'Solarized (dark)' || echo 'Solarized (light)')"

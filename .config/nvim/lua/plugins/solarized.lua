@@ -12,5 +12,8 @@ return {
 
     -- Unlink @variable from Normal to prevent overriding the cursorline bg.
     vim.api.nvim_set_hl(0, '@variable', {})
+
+    -- Clear backgrounds that don't match the window background.
+    vim.api.nvim_set_hl(0, 'SpecialKey', { fg = '#657b83', bold = true })
   end,
 }

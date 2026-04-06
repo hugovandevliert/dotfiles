@@ -27,7 +27,15 @@ return {
     vim.keymap.set('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent = true })
 
     -- Enhanced text objects
-    require('mini.ai').setup()
+    require('mini.ai').setup({
+      -- These clash with vim's built-in incremental selection mappings
+      mappings = {
+        around_next = '',
+        inside_next = '',
+        around_last = '',
+        inside_last = '',
+      },
+    })
 
     -- Statusline
     local statusline = require('mini.statusline')

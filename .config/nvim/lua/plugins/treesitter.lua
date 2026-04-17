@@ -46,7 +46,10 @@ return {
         vim.treesitter.start(buf, language)
 
         if not no_ts_indent[filetype] then
-          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          local has_indent_query = vim.treesitter.query.get(language, 'indents') ~= nil
+          if has_indent_query then
+            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
         end
 
         -- Ruby depends on vim's regex highlighting for indent rules

@@ -3,12 +3,11 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
+    lazy = false,
+    branch = 'main',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-    opts = {
-      ensure_installed = {
+    config = function()
+      require('nvim-treesitter').install({
         'bash',
         'diff',
         'embedded_template',
@@ -29,17 +28,58 @@ return {
         'typescript',
         'vim',
         'yaml',
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        disable = { 'csv' },
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'slim', 'ruby' } },
-    },
+      })
+
+      local no_ts_highlight = { csv = true }
+      local no_ts_indent = { slim = true, ruby = true }
+
+      local function treesitter_try_attach(buf, language)
+        local filetype = vim.bo[buf].filetype
+
+        if no_ts_highlight[filetype] then
+          return
+        end
+        if not vim.treesitter.language.add(language) then
+          return
+        end
+
+        vim.treesitter.start(buf, language)
+
+        if not no_ts_indent[filetype] then
+          local has_indent_query = vim.treesitter.query.get(language, 'indents') ~= nil
+          if has_indent_query then
+            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end
+
+        -- Ruby depends on vim's regex highlighting for indent rules
+        if filetype == 'ruby' then
+          vim.bo[buf].syntax = 'on'
+        end
+      end
+
+      local available_parsers = require('nvim-treesitter').get_available()
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local buf, filetype = args.buf, args.match
+          local language = vim.treesitter.language.get_lang(filetype)
+          if not language then
+            return
+          end
+
+          local installed_parsers = require('nvim-treesitter').get_installed('parsers')
+
+          if vim.tbl_contains(installed_parsers, language) then
+            treesitter_try_attach(buf, language)
+          elseif vim.tbl_contains(available_parsers, language) then
+            require('nvim-treesitter').install(language):await(function()
+              treesitter_try_attach(buf, language)
+            end)
+          else
+            treesitter_try_attach(buf, language)
+          end
+        end,
+      })
+    end,
   },
 }

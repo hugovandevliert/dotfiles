@@ -46,14 +46,16 @@ return {
       map('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it [r]eset hunk' })
       map('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[G]it [r]eset buffer' })
       map('n', '<leader>gp', gitsigns.preview_hunk_inline, { desc = '[G]it [p]review hunk' })
-      map('n', '<leader>gb', gitsigns.blame_line, { desc = '[G]it [b]lame line' })
+      map('n', '<leader>gb', function()
+        gitsigns.blame_line({ full = true })
+      end, { desc = '[G]it [b]lame line' })
       map('n', '<leader>gB', gitsigns.blame, { desc = '[G]it [b]lame buffer' })
       map('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [d]iff against index' })
       map('n', '<leader>gD', function()
         gitsigns.diffthis('@')
       end, { desc = '[G]it [d]iff against last commit' })
-      -- Toggles
-      map('n', '<leader>cb', gitsigns.toggle_current_line_blame, { desc = '[C]hange git show [b]lame line' })
+      -- Text object
+      map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
     end,
   },
 }

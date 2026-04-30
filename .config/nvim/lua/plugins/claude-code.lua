@@ -14,7 +14,7 @@ return {
         normal = '<C-\\>',
         terminal = '<C-\\>',
         variants = {
-          continue = false,
+          continue = '<C-S-\\>',
           verbose = false,
         },
       },

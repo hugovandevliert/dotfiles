@@ -12,6 +12,7 @@ brew 'stylua'
 brew 'tailwindcss-language-server'
 brew 'tree-sitter-cli'
 brew 'typescript-language-server'
+brew 'vscode-langservers-extracted'
 brew 'yarn'
 
 cask 'claude-code@latest'

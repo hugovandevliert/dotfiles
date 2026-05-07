@@ -26,7 +26,7 @@ vim.keymap.set('x', 'P', function()
 end, { expr = true })
 
 -- Keybinds to quickly exit terminal mode
-vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('t', '<C-u>', '<C-\\><C-n><C-u>', { desc = 'Exit terminal mode and scroll up' })
 
 -- Keybinds to make split navigation easier.

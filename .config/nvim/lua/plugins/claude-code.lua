@@ -20,4 +20,10 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    local claude_code = require('claude-code')
+    claude_code.setup(opts)
+    -- Don't drag us back into insert mode on focus
+    claude_code.force_insert_mode = function() end
+  end,
 }

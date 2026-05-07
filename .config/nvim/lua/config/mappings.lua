@@ -25,8 +25,9 @@ vim.keymap.set('x', 'P', function()
   return 'Pgv"' .. vim.v.register .. 'y`>'
 end, { expr = true })
 
--- Exit terminal mode in the builtin terminal with <Esc>
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- Keybinds to quickly exit terminal mode
+vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-u>', '<C-\\><C-n><C-u>', { desc = 'Exit terminal mode and scroll up' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows

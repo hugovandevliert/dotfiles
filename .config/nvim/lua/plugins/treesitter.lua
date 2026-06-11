@@ -23,6 +23,7 @@ return {
         'markdown_inline',
         'query',
         'ruby',
+        'scss',
         'sql',
         'swift',
         'typescript',

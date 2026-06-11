@@ -4,6 +4,10 @@
 return {
   'nvim-mini/mini.nvim',
   config = function()
+    -- Icons used by various plugins (fzf-lua, neo-tree, etc.)
+    require('mini.icons').setup()
+    MiniIcons.mock_nvim_web_devicons()
+
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     require('mini.surround').setup({
       custom_surroundings = {

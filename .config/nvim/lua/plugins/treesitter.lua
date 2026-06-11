@@ -32,6 +32,10 @@ return {
 
       local no_ts_highlight = { csv = true }
       local no_ts_indent = { slim = true, ruby = true }
+      -- Treesitter highlighting clears :syntax and with it synID(). Re-enable
+      -- legacy syntax for filetypes whose tooling depends on synID(), like
+      -- ruby's indent rules, and vim-rails' gf in eruby.
+      local syntax_on = { ruby = true, eruby = true }
 
       local function treesitter_try_attach(buf, language)
         local filetype = vim.bo[buf].filetype
@@ -52,8 +56,7 @@ return {
           end
         end
 
-        -- Ruby depends on vim's regex highlighting for indent rules
-        if filetype == 'ruby' then
+        if syntax_on[filetype] then
           vim.bo[buf].syntax = 'on'
         end
       end

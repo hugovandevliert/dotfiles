@@ -31,8 +31,10 @@ return {
         'yaml',
       })
 
+      -- Filetypes whose Treesitter indentation is worse than the built-in.
+      local no_ts_indent = { slim = true, ruby = true, yaml = true }
+      -- Filetypes whose Treesitter highlighting is worse than the built-in.
       local no_ts_highlight = { csv = true }
-      local no_ts_indent = { slim = true, ruby = true }
       -- Treesitter highlighting clears :syntax and with it synID(). Re-enable
       -- legacy syntax for filetypes whose tooling depends on synID(), like
       -- ruby's indent rules, and vim-rails' gf in eruby.

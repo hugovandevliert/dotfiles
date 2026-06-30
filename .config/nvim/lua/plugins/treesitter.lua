@@ -40,49 +40,27 @@ return {
       -- ruby's indent rules, and vim-rails' gf in eruby.
       local syntax_on = { ruby = true, eruby = true }
 
-      local function treesitter_try_attach(buf, language)
-        local filetype = vim.bo[buf].filetype
-
-        if no_ts_highlight[filetype] then
-          return
-        end
-        if not vim.treesitter.language.add(language) then
-          return
-        end
-
-        vim.treesitter.start(buf, language)
-
-        if not no_ts_indent[filetype] then
-          local has_indent_query = vim.treesitter.query.get(language, 'indents') ~= nil
-          if has_indent_query then
-            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-          end
-        end
-
-        if syntax_on[filetype] then
-          vim.bo[buf].syntax = 'on'
-        end
-      end
-
-      local available_parsers = require('nvim-treesitter').get_available()
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
           local buf, filetype = args.buf, args.match
-          local language = vim.treesitter.language.get_lang(filetype)
-          if not language then
+          if no_ts_highlight[filetype] then
             return
           end
 
-          local installed_parsers = require('nvim-treesitter').get_installed('parsers')
+          -- language.add returns false when the parser isn't installed; bail
+          -- before start() so legacy :syntax stays on instead of a blank buffer.
+          local language = vim.treesitter.language.get_lang(filetype)
+          if not language or not vim.treesitter.language.add(language) then
+            return
+          end
 
-          if vim.tbl_contains(installed_parsers, language) then
-            treesitter_try_attach(buf, language)
-          elseif vim.tbl_contains(available_parsers, language) then
-            require('nvim-treesitter').install(language):await(function()
-              treesitter_try_attach(buf, language)
-            end)
-          else
-            treesitter_try_attach(buf, language)
+          vim.treesitter.start(buf, language)
+
+          if not no_ts_indent[filetype] and vim.treesitter.query.get(language, 'indents') then
+            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+          if syntax_on[filetype] then
+            vim.bo[buf].syntax = 'on'
           end
         end,
       })

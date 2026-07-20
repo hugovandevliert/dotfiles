@@ -1,29 +1,31 @@
--- https://github.com/greggh/claude-code.nvim
+-- https://github.com/coder/claudecode.nvim
 
 return {
-  'greggh/claude-code.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim', -- Required for git operations
-  },
+  'coder/claudecode.nvim',
   opts = {
-    window = {
-      split_ratio = 0.5,
+    terminal = {
+      split_side = 'right',
+      split_width_percentage = 0.5,
+      provider = 'native',
     },
-    keymaps = {
-      toggle = {
-        normal = '<C-\\>',
-        terminal = '<C-\\>',
-        variants = {
-          continue = '<C-S-\\>',
-          verbose = false,
-        },
-      },
-    },
+  },
+  keys = {
+    { '<C-\\>', '<cmd>ClaudeCode<cr>', mode = { 'n', 't' }, desc = 'Toggle Claude Code' },
+    { '<C-S-\\>', '<cmd>ClaudeCode --continue<cr>', desc = 'Continue Claude Code' },
   },
   config = function(_, opts)
-    local claude_code = require('claude-code')
-    claude_code.setup(opts)
-    -- Don't drag us back into insert mode on focus
-    claude_code.force_insert_mode = function() end
+    require('claudecode').setup(opts)
+
+    -- Window navigation from the Claude terminal only.
+    vim.api.nvim_create_autocmd('TermOpen', {
+      callback = function(args)
+        if not vim.api.nvim_buf_get_name(args.buf):match('claude') then
+          return
+        end
+        for _, key in ipairs({ 'h', 'j', 'k', 'l' }) do
+          vim.keymap.set('t', '<C-' .. key .. '>', '<C-\\><C-n><C-w>' .. key, { buffer = args.buf })
+        end
+      end,
+    })
   end,
 }

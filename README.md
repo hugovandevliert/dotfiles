@@ -11,6 +11,12 @@ First, make sure Apple's command line tools are installed:
 xcode-select --install
 ```
 
+Copy ssh keys from iCloud into `~/.ssh` and add them to KeyChain:
+```
+mkdir -p ~/.ssh
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
 Create a `dev` directory:
 ```
 mkdir -p ~/dev && cd ~/dev
@@ -30,8 +36,5 @@ And then run the setup script:
 
 Not everything can be automated.
 
-* Copy ssh keys from iCloud into `~/.ssh` and add them to KeyChain:
-  ```zsh
-  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-  ```
-* Download wordlists by running `set spell` in `vim`
+* Download wordlists by running `:set spell` in `vim`
+* Enable FileVault

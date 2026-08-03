@@ -1,14 +1,20 @@
 #!/usr/bin/env zsh
 
+set -e
+cd "${0:a:h}"
+
 echo "Installing homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
+[ -x /opt/homebrew/bin/brew ] ||
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+grep -q 'brew shellenv' "$HOME/.zprofile" 2>/dev/null ||
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle >> /dev/null
+brew bundle
 brew cleanup >> /dev/null
 
 echo "Installing ohmyzsh..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+[ -d "$HOME/.oh-my-zsh" ] ||
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 ln -sfn "$PWD/.zshrc" "$HOME/.zshrc"
 
 echo "Configuring macOS settings..."
@@ -40,9 +46,11 @@ git config --global delta.blame-timestamp-output-format "%F %R"
 mkdir -p "$HOME/.config"
 
 echo "Configuring ghostty..."
+rm -rf "$HOME/.config/ghostty"
 ln -sfn "$PWD/.config/ghostty" "$HOME/.config/ghostty"
 
 echo "Configuring neovim..."
+rm -rf "$HOME/.config/nvim"
 ln -sfn "$PWD/.config/nvim" "$HOME/.config/nvim"
 
 echo "Configuring ssh..."
@@ -52,9 +60,11 @@ ln -sfn "$PWD/.ssh/config" "$HOME/.ssh/config"
 echo "Adding launch agents..."
 mkdir -p ~/Library/LaunchAgents
 cp "$PWD/escape-map.plist" ~/Library/LaunchAgents/custom.escape-map.plist
-launchctl load -w ~/Library/LaunchAgents/custom.escape-map.plist
+launchctl bootout "gui/$UID/custom.escape-map" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" ~/Library/LaunchAgents/custom.escape-map.plist
 cp "$PWD/ssh-add.plist" ~/Library/LaunchAgents/custom.ssh-add.plist
-launchctl load -w ~/Library/LaunchAgents/custom.ssh-add.plist
+launchctl bootout "gui/$UID/custom.ssh-add" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" ~/Library/LaunchAgents/custom.ssh-add.plist
 
 echo
 echo "Installation complete! Please reboot your machine."

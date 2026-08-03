@@ -12,7 +12,7 @@ echo "Installing ohmyzsh..."
 ln -sfn "$PWD/.zshrc" "$HOME/.zshrc"
 
 echo "Configuring macOS settings..."
-sh .macos
+zsh .macos
 
 echo "Configuring git..."
 git config --global commit.gpgsign true

@@ -38,6 +38,25 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Remove margins in window tiling
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 
+# Rebind window tiling shortcuts off the awkward control + globe defaults.
+# Parameters are (ascii, key code, modifier mask); 65535 means the key has no
+# ascii equivalent. Masks: shift 131072, control 262144, option 524288,
+# command 1048576, fn 8388608.
+hotkey() {
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add "$1" "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>$2</integer><integer>$3</integer><integer>$4</integer></array><key>type</key><string>standard</string></dict></dict>"
+}
+hotkey 237 102 3 786432       # Fill:                    ctrl + opt + F
+hotkey 238 99 8 786432        # Center:                  ctrl + opt + C
+hotkey 239 114 15 786432      # Return to Previous Size: ctrl + opt + R
+hotkey 240 65535 123 9175040  # Tile Left Half:          ctrl + opt + left
+hotkey 241 65535 124 9175040  # Tile Right Half:         ctrl + opt + right
+hotkey 242 65535 126 9175040  # Tile Top Half:           ctrl + opt + up
+hotkey 243 65535 125 9175040  # Tile Bottom Half:        ctrl + opt + down
+hotkey 248 65535 123 9306112  # Arrange Left & Right:    ctrl + opt + shift + left
+hotkey 249 65535 124 9306112  # Arrange Right & Left:    ctrl + opt + shift + right
+hotkey 250 65535 126 9306112  # Arrange Top & Bottom:    ctrl + opt + shift + up
+hotkey 251 65535 125 9306112  # Arrange Bottom & Top:    ctrl + opt + shift + down
+
 # Disable crash reporter dialog
 defaults write com.apple.CrashReporter DialogType none
 

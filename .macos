@@ -22,6 +22,9 @@ defaults write NSGlobalDomain AppleLocale -string "en_NL"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
+# Show seconds in the menu bar clock
+defaults write com.apple.menuextra.clock ShowSeconds -bool true
+
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -34,6 +37,13 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+# Don't write .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Don't reveal the desktop when clicking the wallpaper
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
 # Remove margins in window tiling
 defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
@@ -81,6 +91,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Dock: configure auto hide
 defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
 
 # Dock: set the icon size to 48 pixels
 defaults write com.apple.dock tilesize -int 48
@@ -88,8 +99,9 @@ defaults write com.apple.dock tilesize -int 48
 # Dock: don’t show recent applications
 defaults write com.apple.dock show-recents -bool false
 
-# Dock: remove all applications
+# Dock: remove all applications, folders and stacks
 defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-others -array
 
 # TextEdit: start in plain text mode
 defaults write com.apple.TextEdit RichText -int 0

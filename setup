@@ -48,6 +48,7 @@ mkdir -p "$HOME/.config"
 echo "Configuring ghostty..."
 rm -rf "$HOME/.config/ghostty"
 ln -sfn "$PWD/.config/ghostty" "$HOME/.config/ghostty"
+touch "$HOME/.hushlogin"
 
 echo "Configuring neovim..."
 rm -rf "$HOME/.config/nvim"

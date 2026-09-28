@@ -28,6 +28,8 @@ HISTORY_IGNORE="(clear|dot|ls|vi|vim|fg|gs|gd|gl|gf|gds|gc|gaa|gca)"
 HISTSIZE=100000
 SAVEHIST=100000
 
+alias c="claude"
+alias cr="claude --resume"
 alias cat="bat"
 alias df="df -h"
 alias dot="cd ~/dev/dotfiles"
